@@ -7,6 +7,15 @@ function openModal(modalType) {
     }
 }
 
+// Mobile menu toggle functionality
+function toggleMobileMenu() {
+    const mobileToggle = document.querySelector('.mobile-menu-toggle');
+    const navigation = document.querySelector('.navigation');
+    
+    mobileToggle.classList.toggle('active');
+    navigation.classList.toggle('active');
+}
+
 function closeModal() {
     const modals = document.querySelectorAll('.modal');
     modals.forEach(modal => modal.classList.remove('show'));
@@ -29,6 +38,32 @@ document.addEventListener('keydown', (e) => {
 
 // Form handling
 document.addEventListener('DOMContentLoaded', () => {
+    // Mobile menu close on navigation link click
+    const navLinks = document.querySelectorAll('.navigation a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            const mobileToggle = document.querySelector('.mobile-menu-toggle');
+            const navigation = document.querySelector('.navigation');
+            if (navigation.classList.contains('active')) {
+                mobileToggle.classList.remove('active');
+                navigation.classList.remove('active');
+            }
+        });
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+        const mobileToggle = document.querySelector('.mobile-menu-toggle');
+        const navigation = document.querySelector('.navigation');
+        
+        if (!e.target.closest('.navigation') && !e.target.closest('.mobile-menu-toggle')) {
+            if (navigation.classList.contains('active')) {
+                mobileToggle.classList.remove('active');
+                navigation.classList.remove('active');
+            }
+        }
+    });
+
     // Demo form
     const demoForm = document.querySelector('#demo-modal form');
     if (demoForm) {
@@ -164,8 +199,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Smooth scrolling for navigation
-    const navLinks = document.querySelectorAll('.navigation a[href^="#"]');
-    navLinks.forEach(link => {
+    const smoothNavLinks = document.querySelectorAll('.navigation a[href^="#"]');
+    smoothNavLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const targetId = link.getAttribute('href');
@@ -192,6 +227,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize brand showcase swiper
     initBrandShowcase();
+
+    // Initialize logo marquee
+    initLogoMarquee();
 });
 
 // Animate metrics on scroll
@@ -296,6 +334,65 @@ function initBrandShowcase() {
     });
 
     console.log('Brand showcase swiper initialized successfully');
+}
+
+// Simple CSS Marquee Implementation
+function initLogoMarquee() {
+    console.log('Initializing CSS marquee...');
+
+    const rootElement = document.getElementById('logo-marquee-root');
+    if (!rootElement) {
+        console.error('logo-marquee-root element not found');
+        return;
+    }
+
+    // Create the marquee HTML structure
+    const marqueeHTML = `
+        <div class="logo-marquee-container">
+            <div class="logo-marquee-track">
+                <div class="logo-item">
+                    <img src="https://www.firstsource.com/themes/custom/first_source/images/Firstsource-logo.svg" alt="Firstsource logo" class="company-logo">
+                </div>
+                <div class="logo-item">
+                    <img src="https://moraegpro.wpenginepowered.com/wp-content/uploads/2022/11/logo-morae.svg" alt="Morae logo" class="company-logo">
+                </div>
+                <div class="logo-item">
+                    <img src="https://www.sksbusinessservices.com/wp-content/uploads/2021/04/cropped-SKSBS-1.png" alt="SKS Business Services logo" class="company-logo">
+                </div>
+                <div class="logo-item">
+                    <img src="https://bhalaria.in/cdn/shop/files/LogoImage_132683164841010010_100x@2x.jpg?v=1693983552" alt="Bhalaria logo" class="company-logo">
+                </div>
+                <div class="logo-item">
+                    <img src="https://www.mcdonalds.com/content/dam/sites/usa/nfl/icons/arches-logo_108x108.jpg" alt="McDonald's logo" class="company-logo">
+                </div>
+                <div class="logo-item">
+                    <img src="https://img-cdn.publive.online/fit-in/1200x675/filters:format(webp)/entrackr/media/post_attachments/wp-content/uploads/2024/07/Fresh.png" alt="Freshbus logo" class="company-logo">
+                </div>
+                <!-- Duplicate for seamless scroll -->
+                <div class="logo-item">
+                    <img src="https://www.firstsource.com/themes/custom/first_source/images/Firstsource-logo.svg" alt="Firstsource logo" class="company-logo">
+                </div>
+                <div class="logo-item">
+                    <img src="https://moraegpro.wpenginepowered.com/wp-content/uploads/2022/11/logo-morae.svg" alt="Morae logo" class="company-logo">
+                </div>
+                <div class="logo-item">
+                    <img src="https://www.sksbusinessservices.com/wp-content/uploads/2021/04/cropped-SKSBS-1.png" alt="SKS Business Services logo" class="company-logo">
+                </div>
+                <div class="logo-item">
+                    <img src="https://bhalaria.in/cdn/shop/files/LogoImage_132683164841010010_100x@2x.jpg?v=1693983552" alt="Bhalaria logo" class="company-logo">
+                </div>
+                <div class="logo-item">
+                    <img src="https://www.mcdonalds.com/content/dam/sites/usa/nfl/icons/arches-logo_108x108.jpg" alt="McDonald's logo" class="company-logo">
+                </div>
+                <div class="logo-item">
+                    <img src="https://img-cdn.publive.online/fit-in/1200x675/filters:format(webp)/entrackr/media/post_attachments/wp-content/uploads/2024/07/Fresh.png" alt="Freshbus logo" class="company-logo">
+                </div>
+            </div>
+        </div>
+    `;
+
+    rootElement.innerHTML = marqueeHTML;
+    console.log('CSS marquee HTML injected successfully');
 }
 
 // Full ReactBits LiquidEther Implementation

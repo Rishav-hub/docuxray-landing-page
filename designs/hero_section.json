@@ -1,285 +1,302 @@
 {
-  "designSystemProfile": {
-    "name": "Hero Section - DocuXray Landing Page",
-    "version": "1.0",
-    "description": "Hero section design with liquid background animation, centered content layout, and professional enterprise messaging",
+  "designSystem": {
+    "name": "Customer-Centric Landing Page Design System",
+    "version": "1.0.0",
+    "description": "A conversion-focused landing page design system emphasizing social proof, customer outcomes, and friction reduction",
     
-    "colorPalette": {
-      "primary": {
-        "background_gradient": "linear-gradient(135deg, #FFFFFF 0%, #F9FAFB 100%)",
-        "text_primary": "#1F2937",
-        "text_secondary": "#6B7280",
-        "highlight_green": "#059669"
+    "layout": {
+      "structure": "two-column-hero",
+      "grid": {
+        "columns": 12,
+        "leftColumn": {
+          "span": "5-6 columns",
+          "contentType": "text-and-cta"
+        },
+        "rightColumn": {
+          "span": "6-7 columns",
+          "contentType": "visual-media"
+        }
       },
-      "brand_colors": {
-        "primary_green": "#059669",
-        "accent_green": "#047857", 
-        "dark_green": "#065F46",
-        "background_light": "#FFFFFF",
-        "background_subtle": "#F9FAFB"
+      "spacing": {
+        "containerMaxWidth": "1400px",
+        "contentPadding": "80-120px vertical, 40-60px horizontal",
+        "sectionGap": "40-60px",
+        "elementGap": "20-32px"
+      },
+      "alignment": {
+        "leftColumn": "left-aligned",
+        "rightColumn": "center-aligned"
+      }
+    },
+
+    "navigation": {
+      "layout": "horizontal-bar",
+      "position": "top-fixed",
+      "structure": [
+        {
+          "element": "logo",
+          "position": "left",
+          "size": "medium",
+          "style": "minimal-border"
+        },
+        {
+          "element": "phone-number",
+          "position": "right-center",
+          "includesIcon": true,
+          "iconStyle": "circular-filled"
+        },
+        {
+          "element": "cta-button",
+          "position": "right",
+          "style": "outlined"
+        }
+      ],
+      "spacing": {
+        "height": "80-100px",
+        "padding": "20-30px horizontal"
       }
     },
 
     "typography": {
       "hierarchy": {
-        "hero_heading": {
-          "fontFamily": "'Playfair Display', serif",
-          "fontSize": "clamp(2.5rem, 5vw, 4rem)",
-          "fontWeight": "500",
-          "lineHeight": "1.2",
-          "color": "#1F2937",
-          "marginBottom": "1.5rem"
+        "label": {
+          "purpose": "social-proof-indicator",
+          "size": "12-14px",
+          "weight": "500-600",
+          "transform": "uppercase",
+          "letterSpacing": "0.05-0.1em",
+          "color": "neutral-dark"
         },
-        "hero_subheading": {
-          "fontFamily": "'Inter', sans-serif",
-          "fontSize": "1.125rem",
-          "fontWeight": "400",
-          "lineHeight": "1.6",
-          "color": "#6B7280",
-          "maxWidth": "600px",
-          "marginBottom": "3rem"
+        "h1": {
+          "purpose": "main-headline",
+          "size": "48-72px",
+          "weight": "700-800",
+          "lineHeight": "1.1-1.2",
+          "letterSpacing": "-0.02em",
+          "color": "primary-black",
+          "maxWidth": "600-700px"
         },
-        "highlight_text": {
-          "color": "#059669",
-          "treatment": "inline_highlight"
+        "body-large": {
+          "purpose": "subheadline-description",
+          "size": "16-20px",
+          "weight": "400-500",
+          "lineHeight": "1.5-1.6",
+          "color": "neutral-dark",
+          "maxWidth": "550-650px"
+        },
+        "body-small": {
+          "purpose": "supporting-text-fud-reducer",
+          "size": "14-16px",
+          "weight": "400-500",
+          "lineHeight": "1.5",
+          "color": "neutral-medium"
+        },
+        "button-text": {
+          "size": "16-18px",
+          "weight": "600-700",
+          "transform": "uppercase",
+          "letterSpacing": "0.05em"
         }
+      },
+      "fontStack": {
+        "primary": "sans-serif system fonts (Inter, SF Pro, Roboto style)",
+        "fallback": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
       }
     },
 
-    "layout": {
-      "structure": {
-        "type": "centered_hero",
-        "container": "max-width: 1200px, centered",
-        "padding": "4rem 0",
-        "background": "gradient_with_liquid_animation",
-        "position": "relative_with_overflow_hidden"
-      },
-      "content_alignment": {
-        "primary": "center_aligned",
-        "maxWidth": "800px",
-        "margin": "0 auto",
-        "position": "relative_z-index_2"
-      },
-      "spacing": {
-        "section_padding": "4rem 0",
-        "content_gaps": "1.5rem to 3rem",
-        "action_gaps": "1rem"
-      }
-    },
-
-    "background_effects": {
-      "liquid_animation": {
-        "type": "three_js_canvas",
-        "position": "absolute_full_coverage",
-        "z_index": "1",
-        "opacity": "0.6",
-        "pointer_events": "none",
-        "description": "Interactive liquid background using Three.js"
-      },
-      "gradient_overlay": {
-        "type": "linear_gradient",
-        "direction": "135deg",
-        "colors": ["#FFFFFF", "#F9FAFB"],
-        "position": "background_base"
+    "colorPalette": {
+      "philosophy": "minimal, high contrast, accent-driven",
+      "colors": {
+        "primary": {
+          "black": "#000000 or #1a1a1a",
+          "usage": "headlines, primary text"
+        },
+        "accent": {
+          "vibrant": "#6B46FF or similar saturated purple/blue",
+          "usage": "CTA buttons, interactive elements, brand emphasis"
+        },
+        "neutrals": {
+          "dark": "#333333 - #4a4a4a",
+          "medium": "#666666 - #808080",
+          "light": "#e5e5e5 - #f5f5f5",
+          "white": "#ffffff",
+          "usage": "backgrounds, borders, supporting text"
+        },
+        "accents-secondary": {
+          "phone-icon": "#3b82f6 or similar blue",
+          "usage": "contact elements, trust indicators"
+        }
       }
     },
 
     "components": {
-      "hero_content": {
-        "layout": "centered_vertical_stack",
+      "buttons": {
+        "primary-cta": {
+          "style": "filled",
+          "background": "vibrant accent color",
+          "textColor": "white",
+          "padding": "18-24px vertical, 40-60px horizontal",
+          "borderRadius": "8-12px",
+          "fontSize": "16-18px",
+          "fontWeight": "600-700",
+          "textTransform": "uppercase",
+          "shadow": "subtle or none",
+          "hoverEffect": "slight darken or scale(1.02)"
+        },
+        "secondary-cta": {
+          "style": "outlined",
+          "border": "2px solid neutral-dark",
+          "textColor": "neutral-dark",
+          "background": "transparent",
+          "padding": "12-16px vertical, 24-36px horizontal",
+          "borderRadius": "6-8px",
+          "hoverEffect": "background fill with subtle color"
+        }
+      },
+
+      "contactElement": {
+        "phoneNumber": {
+          "layout": "icon + text horizontal",
+          "iconStyle": "circular filled background",
+          "iconSize": "40-50px",
+          "iconColor": "blue accent",
+          "textSize": "20-24px",
+          "textWeight": "700",
+          "spacing": "12-16px gap"
+        }
+      },
+
+      "socialProof": {
+        "label": {
+          "position": "above headline",
+          "style": "uppercase small text",
+          "margin": "0 0 16-24px 0"
+        }
+      },
+
+      "mediaContainer": {
+        "style": "bordered box",
+        "border": "2-3px solid black",
+        "borderRadius": "0 or 8-12px",
+        "padding": "40-60px",
+        "background": "white or light neutral",
+        "aspectRatio": "flexible, typically 4:3 or 16:9",
+        "contentAlignment": "center",
+        "placeholderText": {
+          "size": "18-24px",
+          "weight": "500-600",
+          "color": "neutral-dark",
+          "lineHeight": "1.5"
+        }
+      },
+
+      "fudReducer": {
+        "position": "below CTA button",
+        "margin": "24-32px top",
+        "style": "simple text",
+        "fontSize": "14-16px",
+        "fontWeight": "400-500",
+        "color": "neutral-dark",
+        "format": "UPPERCASE label: followed by comma-separated items in parentheses"
+      }
+    },
+
+    "contentStructure": {
+      "heroSection": {
         "elements": [
           {
-            "type": "hero_heading",
-            "content": "Transform Document Processing with Enterprise AI",
-            "highlight_words": ["Enterprise AI"],
-            "highlight_color": "#059669"
+            "order": 1,
+            "type": "social-proof-label",
+            "format": "SOCIAL PROOF #[number]"
           },
           {
-            "type": "hero_subheading", 
-            "content": "Automate document analysis, extraction, and compliance checking for contracts, invoices, and regulatory documents. Reduce processing time by 85% while improving accuracy to 99.5%.",
-            "maxWidth": "600px",
-            "alignment": "center"
+            "order": 2,
+            "type": "headline",
+            "formula": "[Dream Outcome] and '[What's In It For Me]'",
+            "style": "customer benefit focused, not feature focused"
           },
           {
-            "type": "hero_actions",
-            "layout": "horizontal_button_group",
-            "gap": "1rem",
-            "flexWrap": "wrap",
-            "justifyContent": "center"
+            "order": 3,
+            "type": "subheadline",
+            "formula": "[Pain point quote] | [Solution statement]",
+            "length": "2-3 lines maximum"
+          },
+          {
+            "order": 4,
+            "type": "primary-cta",
+            "text": "Action-oriented verb phrase (uppercase)"
+          },
+          {
+            "order": 5,
+            "type": "fud-reducer",
+            "format": "REDUCE [Category] and [Acronym] ([comma, separated, items])"
           }
         ]
-      },
-
-      "action_buttons": {
-        "primary_button": {
-          "background": "#059669",
-          "color": "white",
-          "padding": "0.75rem 1.5rem",
-          "borderRadius": "0.5rem",
-          "fontWeight": "500",
-          "fontSize": "0.875rem",
-          "hover": {
-            "background": "#047857",
-            "transform": "translateY(-1px)",
-            "boxShadow": "0 4px 6px -1px rgba(0, 0, 0, 0.1)"
-          },
-          "text": "Start Free Trial"
-        },
-        "secondary_button": {
-          "background": "transparent",
-          "color": "#1F2937",
-          "border": "1px solid #6B7280",
-          "padding": "0.75rem 1.5rem",
-          "borderRadius": "0.5rem",
-          "fontWeight": "500",
-          "fontSize": "0.875rem",
-          "hover": {
-            "background": "#F9FAFB",
-            "borderColor": "#059669",
-            "color": "#059669"
-          },
-          "text": "Upload Sample"
-        }
       }
     },
 
-    "interactions": {
-      "button_hover": {
-        "primary": {
-          "transform": "translateY(-1px)",
-          "boxShadow": "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
-          "transition": "all 0.3s ease-in-out"
-        },
-        "secondary": {
-          "background": "#F9FAFB",
-          "borderColor": "#059669",
-          "color": "#059669",
-          "transition": "all 0.3s ease-in-out"
-        }
-      },
-      "liquid_background": {
-        "type": "interactive_animation",
-        "library": "Three.js",
-        "behavior": "responsive_to_mouse_movement",
-        "performance": "optimized_for_60fps"
-      }
-    },
-
-    "responsive_design": {
-      "breakpoints": {
-        "mobile": "768px",
-        "tablet": "1024px",
-        "desktop": "1440px"
-      },
-      "scaling": {
-        "typography": {
-          "hero_heading": "clamp(2.5rem, 5vw, 4rem)",
-          "hero_subheading": "responsive_fluid"
-        },
-        "layout": {
-          "mobile": "stacked_buttons",
-          "desktop": "horizontal_buttons"
-        },
-        "spacing": {
-          "mobile": "reduced_padding",
-          "desktop": "generous_spacing"
-        }
-      },
-      "mobile_adaptations": {
-        "hero_actions": {
-          "flexDirection": "column",
-          "alignItems": "center",
-          "buttonWidth": "100%",
-          "maxWidth": "300px"
-        },
-        "hero_content": {
-          "padding": "2rem 0"
-        }
-      }
-    },
-
-    "visual_principles": {
-      "emphasis": [
-        "Large impactful headline with highlight",
-        "Generous whitespace for breathing room",
-        "Liquid animation as visual interest",
+    "designPrinciples": {
+      "visual": [
+        "High contrast between elements",
+        "Generous white space",
+        "Clear visual hierarchy through size and weight",
+        "Minimal decorative elements",
+        "Strong geometric shapes (rectangles, circles)",
+        "Clean borders to define sections"
+      ],
+      "conversion": [
+        "Customer outcome focused, not feature focused",
+        "Social proof placement above headline",
+        "Single primary CTA per section",
+        "Explicit friction reduction messaging",
+        "Visual reinforcement of value proposition",
         "Clear call-to-action hierarchy"
       ],
-      "mood": [
-        "Professional",
-        "Innovative", 
-        "Trustworthy",
-        "Enterprise-focused"
+      "content": [
+        "Pain point identification",
+        "Benefit articulation",
+        "Unique mechanism or approach",
+        "Trust building elements",
+        "Action-oriented language"
+      ]
+    },
+
+    "responsiveBreakpoints": {
+      "desktop": ">1200px - two column layout",
+      "tablet": "768-1200px - maintain two columns, adjust spacing",
+      "mobile": "<768px - stack to single column, media container above or below text"
+    },
+
+    "animations": {
+      "philosophy": "subtle and purposeful",
+      "elements": {
+        "ctaButton": "hover scale or color transition (200-300ms)",
+        "links": "underline animation or color fade (200ms)",
+        "onScroll": "optional fade-in for sections (300-500ms)",
+        "heroEntry": "optional stagger for headline/cta (100-200ms delay)"
+      }
+    },
+
+    "usageGuidelines": {
+      "whenToUse": [
+        "Landing pages with clear conversion goal",
+        "Hero sections for service-based businesses",
+        "Product launch pages",
+        "Lead generation pages"
       ],
-      "style_keywords": [
-        "modern",
-        "animated",
-        "centered",
-        "gradient",
-        "interactive",
-        "enterprise"
+      "keyElements": [
+        "Always include social proof indicator",
+        "Customer-centric headline formula",
+        "Single clear CTA",
+        "Visual content that demonstrates value",
+        "Friction reduction statement"
+      ],
+      "variations": [
+        "Swap left/right columns for variety",
+        "Add video instead of static image",
+        "Include trust badges or testimonial count",
+        "Add secondary supporting text between subhead and CTA"
       ]
-    },
-
-    "accessibility": {
-      "contrast_ratios": {
-        "text_background": "WCAG AA compliant",
-        "button_text": "High contrast",
-        "highlight_text": "Sufficient contrast"
-      },
-      "focus_states": {
-        "buttons": "2px solid #059669 outline",
-        "outlineOffset": "2px"
-      },
-      "reduced_motion": {
-        "liquid_animation": "disable_on_prefers_reduced_motion",
-        "hover_effects": "simplified_for_accessibility"
-      }
-    },
-
-    "performance": {
-      "optimization": {
-        "three_js": "lazy_loaded",
-        "animations": "hardware_accelerated",
-        "images": "optimized_loading"
-      },
-      "loading_strategy": {
-        "critical_css": "inline",
-        "animations": "defer_non_critical",
-        "background": "progressive_enhancement"
-      }
-    },
-
-    "implementation_notes": {
-      "css_approach": "CSS custom properties with utility classes",
-      "animation_library": "Three.js for liquid background",
-      "responsive_strategy": "mobile-first with clamp() for fluid typography",
-      "browser_support": "Modern browsers with Three.js fallback",
-      "accessibility": [
-        "Semantic HTML structure",
-        "Proper heading hierarchy",
-        "Keyboard navigation support",
-        "Screen reader friendly content"
-      ]
-    },
-
-    "content_strategy": {
-      "messaging_tone": "professional_enterprise",
-      "headline_pattern": "problem_solution_benefit",
-      "cta_language": "action_oriented_clear",
-      "value_proposition": "quantified_benefits_85_percent_99_5_percent"
-    },
-
-    "technical_specifications": {
-      "container_max_width": "1200px",
-      "hero_content_max_width": "800px",
-      "subheading_max_width": "600px",
-      "button_min_height": "44px",
-      "z_index_layers": {
-        "background": "1",
-        "content": "2",
-        "header": "100"
-      }
     }
   }
 }

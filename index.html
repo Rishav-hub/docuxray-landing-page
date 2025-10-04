@@ -25,13 +25,18 @@
                 </div>
                 <nav class="navigation">
                     <ul>
-                        <li><a href="#features">Features</a></li>
-                        <li><a href="#use-cases">Use Cases</a></li>
-                        <li><a href="#success">Success Stories</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#blogs">Blogs</a></li>
+                        <li><a href="#about">About Us</a></li>
                     </ul>
                 </nav>
                 <div class="header-cta">
-                    <button class="btn btn-secondary" onclick="openModal('demo')">Get Demo</button>
+                    <button class="btn btn-secondary" onclick="openModal('contact')">Contact Sales</button>
+                </div>
+                <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
             </div>
         </div>
@@ -41,59 +46,66 @@
     <section class="hero">
         <div id="liquid-background" class="liquid-background"></div>
         <div class="container">
-            <div class="hero-content">
-                <h2 class="hero-heading">
-                    Transform Document Processing with
-                    <span class="highlight">Enterprise AI</span>
-                </h2>
-                <p class="hero-subheading">
-                    Automate document analysis, extraction, and compliance checking for contracts, invoices, and regulatory documents. Reduce processing time by 85% while improving accuracy to 99.5%.
-                </p>
-                <div class="hero-actions">
-                    <button class="btn btn-primary" onclick="openModal('demo')">Start Free Trial</button>
-                    <button class="btn btn-secondary" onclick="openModal('upload')">Upload Sample</button>
+            <div class="hero-grid">
+                <div class="hero-left">
+                    <h2 class="hero-heading">
+                        Transform Document Processing and
+                        <span class="highlight">'Save 90% Time & Cost'</span>
+                    </h2>
+                    <p class="hero-subheading">
+                        Works instantly with invoices, contracts, reports, or forms structured or unstructured.
+Get <strong>clean data, insights, and dashboards</strong> — <strong>no setup or training required</strong>.
+                    </p>
+                    <div class="hero-actions">
+                        <button class="btn btn-primary" onclick="openModal('demo')">Start with 100 pages free</button>
+                        <button class="btn btn-secondary" onclick="openModal('upload')">Upload Document</button>
+                    </div>
+                    <div class="fud-reducer">
+                        <div class="checklist-grid">
+                            <div class="checklist-item">
+                                <span class="check-icon">✔</span>
+                                <span class="check-text">Free trial</span>
+                            </div>
+                            <div class="checklist-item">
+                                <span class="check-icon">✔</span>
+                                <span class="check-text">Fast setup</span>
+                            </div>
+                            <div class="checklist-item">
+                                <span class="check-icon">✔</span>
+                                <span class="check-text">Easy cancellation</span>
+                            </div>
+                            <div class="checklist-item">
+                                <span class="check-icon">✔</span>
+                                <span class="check-text">Real-time dashboard</span>
+                            </div>
+                            <div class="checklist-item">
+                                <span class="check-icon">✔</span>
+                                <span class="check-text">API integrations</span>
+                            </div>
+                            <div class="checklist-item">
+                                <span class="check-icon">✔</span>
+                                <span class="check-text">No credit card required</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-right">
+                    <div class="media-container">
+                        <img src="ChatGPT Image Oct 5, 2025, 03_30_22 AM.png" alt="Document Processing Dashboard" class="dashboard-image">
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Value Metrics -->
-    <section class="metrics">
+    <!-- Logo Showcase / Trust Section -->
+    <section class="logo-showcase">
         <div class="container">
-            <div class="metrics-grid">
-                <div class="metric-card">
-                    <div class="metric-value">85%</div>
-                    <div class="metric-label">Time Saved</div>
-                    <div class="metric-description">Reduce document processing from days to hours</div>
-                    <div class="metric-visual">
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 85%"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-value">99.5%</div>
-                    <div class="metric-label">Accuracy Rate</div>
-                    <div class="metric-description">Industry-leading precision in data extraction</div>
-                    <div class="metric-visual">
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 99.5%"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-value">$2.4M</div>
-                    <div class="metric-label">Cost Reduction</div>
-                    <div class="metric-description">Average annual savings per enterprise client</div>
-                    <div class="metric-visual">
-                        <div class="savings-chart">
-                            <div class="chart-bar" style="height: 80%"></div>
-                            <div class="chart-bar" style="height: 60%"></div>
-                            <div class="chart-bar" style="height: 40%"></div>
-                        </div>
-                    </div>
-                </div>
+            <div class="logo-showcase-header">
+                <h2 class="logo-showcase-title">Trusted by Leading Enterprises</h2>
+                <p class="logo-showcase-subtitle">Join companies around the world that trust DocuXray to transform their document processing workflows</p>
             </div>
+            <div id="logo-marquee-root"></div>
         </div>
     </section>
 

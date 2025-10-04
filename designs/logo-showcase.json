@@ -1,0 +1,357 @@
+{
+    "designSystem": {
+      "name": "Logo Showcase / Social Proof Section",
+      "version": "1.0.0",
+      "description": "A trust-building section showcasing client/partner logos with centered headline and descriptive text",
+      
+      "layout": {
+        "structure": "centered-vertical-stacked",
+        "sections": [
+          {
+            "name": "header",
+            "alignment": "center",
+            "maxWidth": "700-800px",
+            "margin": "0 auto"
+          },
+          {
+            "name": "logo-grid",
+            "alignment": "center",
+            "display": "horizontal-scroll or grid"
+          }
+        ],
+        "spacing": {
+          "sectionPadding": "80-120px vertical, 40-60px horizontal",
+          "headerToLogos": "48-64px",
+          "betweenLogos": "40-80px horizontal, 40-60px vertical (if multi-row)"
+        },
+        "containerMaxWidth": "1200-1400px"
+      },
+  
+      "typography": {
+        "hierarchy": {
+          "sectionHeadline": {
+            "purpose": "main trust indicator title",
+            "size": "32-48px",
+            "weight": "600-700",
+            "lineHeight": "1.2-1.3",
+            "letterSpacing": "-0.01em",
+            "color": "primary-dark",
+            "textAlign": "center",
+            "margin": "0 0 16-24px 0"
+          },
+          "sectionSubheadline": {
+            "purpose": "supporting description",
+            "size": "16-20px",
+            "weight": "400-500",
+            "lineHeight": "1.5-1.6",
+            "color": "neutral-medium",
+            "textAlign": "center",
+            "maxWidth": "600-700px",
+            "margin": "0 auto"
+          }
+        },
+        "fontStack": {
+          "primary": "sans-serif system fonts (Inter, SF Pro, similar)",
+          "fallback": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+        }
+      },
+  
+      "colorPalette": {
+        "philosophy": "minimal, neutral background with subtle contrast",
+        "colors": {
+          "background": {
+            "main": "#f8f9fa - #fafbfc (very light gray/off-white)",
+            "alternative": "pure white #ffffff",
+            "usage": "section background, creates subtle separation"
+          },
+          "text": {
+            "headline": "#1a1a1a - #2d2d2d (near black)",
+            "body": "#666666 - #7a7a7a (medium gray)",
+            "usage": "hierarchy through contrast"
+          },
+          "logos": {
+            "treatment": "grayscale or desaturated",
+            "opacity": "60-80% in default state",
+            "hoverOpacity": "100%",
+            "usage": "unified appearance, subtle brand presence"
+          }
+        }
+      },
+  
+      "components": {
+        "logoContainer": {
+          "individual": {
+            "display": "flex-item or grid-cell",
+            "alignment": "center (both axes)",
+            "padding": "20-32px",
+            "minWidth": "120-180px",
+            "maxWidth": "180-240px",
+            "height": "80-120px",
+            "background": "transparent or subtle white card",
+            "border": "optional: 1px solid rgba(0,0,0,0.08)",
+            "borderRadius": "0 or 8-12px"
+          },
+          "logo": {
+            "maxWidth": "100-160px",
+            "maxHeight": "40-60px",
+            "objectFit": "contain",
+            "filter": "grayscale(100%) or desaturate",
+            "opacity": "0.6-0.8",
+            "transition": "opacity 300ms, filter 300ms"
+          },
+          "hoverState": {
+            "opacity": "1.0",
+            "filter": "grayscale(0%) or original",
+            "transform": "optional: scale(1.05)",
+            "transition": "all 300ms ease"
+          }
+        },
+  
+        "gridLayout": {
+          "desktop": {
+            "display": "grid or flex-wrap",
+            "columns": "4-6 items per row",
+            "gap": "40-80px horizontal, 40-60px vertical",
+            "justifyContent": "center",
+            "alignItems": "center"
+          },
+          "tablet": {
+            "columns": "3-4 items per row",
+            "gap": "32-48px"
+          },
+          "mobile": {
+            "display": "horizontal-scroll or 2-column grid",
+            "gap": "24-32px",
+            "padding": "0 20px"
+          }
+        },
+  
+        "scrollableVariant": {
+          "display": "flex with horizontal scroll",
+          "overflow": "scroll or auto",
+          "scrollBehavior": "smooth",
+          "scrollbarWidth": "none or thin",
+          "gap": "40-60px",
+          "padding": "20px 40px",
+          "maskImage": "linear-gradient(to right, transparent, black 5%, black 95%, transparent)"
+        }
+      },
+  
+      "contentStructure": {
+        "elements": [
+          {
+            "order": 1,
+            "type": "section-headline",
+            "examples": [
+              "Trusted by Leading Enterprises",
+              "Trusted by [Number]+ Companies",
+              "Join [Number] Happy Customers",
+              "As Seen In",
+              "Partners & Clients"
+            ]
+          },
+          {
+            "order": 2,
+            "type": "supporting-text",
+            "optional": true,
+            "examples": [
+              "Join leading enterprises that rely on [Product] for their [use case]",
+              "Companies around the world trust [Product] to [benefit]"
+            ]
+          },
+          {
+            "order": 3,
+            "type": "logo-collection",
+            "quantity": "4-8 logos (desktop), infinite scroll option",
+            "arrangement": "single row or multi-row grid"
+          }
+        ]
+      },
+  
+      "designPrinciples": {
+        "visual": [
+          "Subtle, clean background that doesn't compete with logos",
+          "Centered alignment for credibility",
+          "Consistent logo sizing and spacing",
+          "Grayscale or desaturated logos for unified look",
+          "Even distribution of visual weight",
+          "Generous whitespace around elements"
+        ],
+        "trust-building": [
+          "Display recognizable brand names/logos",
+          "Use quantity indicators if impressive (50+, 1000+ etc)",
+          "Balance between showing enough logos and avoiding clutter",
+          "Ensure logos are legible at display size",
+          "Group by industry/category if relevant"
+        ],
+        "interaction": [
+          "Subtle hover effects on logos (color restore, slight scale)",
+          "Smooth scrolling for horizontal layouts",
+          "Optional: Click to view case study or client testimonial",
+          "Accessible: proper alt text for all logos"
+        ]
+      },
+  
+      "variations": {
+        "layoutOptions": [
+          {
+            "name": "static-grid",
+            "description": "Fixed grid of 4-8 logos, all visible",
+            "bestFor": "Desktop, limited number of high-value clients"
+          },
+          {
+            "name": "horizontal-scroll",
+            "description": "Scrollable carousel of logos",
+            "bestFor": "Many clients, mobile-first, continuous loop animation"
+          },
+          {
+            "name": "multi-row-grid",
+            "description": "2-3 rows of logos",
+            "bestFor": "Large number of clients, categorization by industry"
+          },
+          {
+            "name": "infinite-marquee",
+            "description": "Auto-scrolling continuous loop",
+            "bestFor": "Creating movement, many logos, social proof emphasis"
+          }
+        ],
+        "styleOptions": [
+          {
+            "name": "minimal-clean",
+            "characteristics": "No borders, grayscale logos, ample spacing"
+          },
+          {
+            "name": "card-based",
+            "characteristics": "Each logo in subtle bordered card, slight shadow"
+          },
+          {
+            "name": "full-color",
+            "characteristics": "Logos retain brand colors, higher opacity"
+          }
+        ]
+      },
+  
+      "responsiveBreakpoints": {
+        "desktop": {
+          "width": ">1200px",
+          "columns": "4-6 logos per row",
+          "logoSize": "max-width 160px, max-height 60px"
+        },
+        "tablet": {
+          "width": "768-1200px",
+          "columns": "3-4 logos per row",
+          "logoSize": "max-width 140px, max-height 50px",
+          "spacing": "reduce gaps slightly"
+        },
+        "mobile": {
+          "width": "<768px",
+          "layout": "horizontal scroll or 2-column grid",
+          "logoSize": "max-width 120px, max-height 40px",
+          "headline": "reduce to 28-36px",
+          "padding": "reduce vertical padding to 60-80px"
+        }
+      },
+  
+      "accessibility": {
+        "requirements": [
+          "All logos must have descriptive alt text: 'Company Name logo'",
+          "Ensure sufficient contrast for text elements (WCAG AA minimum)",
+          "Keyboard navigable if interactive",
+          "Avoid auto-scrolling that can't be paused",
+          "Provide skip link if logo section is very long"
+        ]
+      },
+  
+      "animations": {
+        "entrance": {
+          "type": "fade-in with slight upward motion",
+          "delay": "stagger by 50-100ms per logo",
+          "duration": "400-600ms",
+          "easing": "ease-out"
+        },
+        "hover": {
+          "properties": ["opacity", "filter", "transform"],
+          "duration": "300ms",
+          "easing": "ease-in-out"
+        },
+        "marquee": {
+          "speed": "slow (30-60 seconds per loop)",
+          "direction": "left-to-right or right-to-left",
+          "pauseOnHover": true
+        }
+      },
+  
+      "contentGuidelines": {
+        "headlineFormulas": [
+          "Trusted by [Descriptor] [Entity Type]",
+          "Join [Number]+ [Customer Type]",
+          "As Seen In / Featured In",
+          "Proudly Serving [Industry/Region]",
+          "Partners & Clients"
+        ],
+        "logoSelection": [
+          "Choose recognizable brands when possible",
+          "Mix of company sizes if applicable",
+          "Represent different industries/use cases",
+          "Ensure you have permission to display logos",
+          "Keep total count to 4-12 for static display",
+          "Unlimited for scrolling/marquee displays"
+        ],
+        "qualityStandards": [
+          "Use high-resolution logo files (SVG preferred)",
+          "Consistent format: all horizontal or all stacked",
+          "Remove backgrounds from logos",
+          "Ensure legibility at display size",
+          "Update logos if brands rebrand"
+        ]
+      },
+  
+      "implementation": {
+        "htmlStructure": {
+          "container": "section with semantic class",
+          "header": "div with h2 + optional p",
+          "logoContainer": "div with grid/flex display",
+          "logoItems": "individual divs or list items with img tags"
+        },
+        "cssApproach": {
+          "layout": "CSS Grid or Flexbox",
+          "responsiveness": "Media queries or container queries",
+          "effects": "CSS filters and transitions",
+          "scrolling": "CSS overflow or JavaScript for advanced effects"
+        },
+        "performanceConsiderations": [
+          "Lazy load logos below fold",
+          "Use SVG format when possible (smaller file size)",
+          "Optimize PNG/JPG logos (compress, appropriate dimensions)",
+          "Consider using CSS sprites for multiple small logos",
+          "Implement intersection observer for entrance animations"
+        ]
+      },
+  
+      "usageGuidelines": {
+        "whenToUse": [
+          "Below hero section on landing pages",
+          "Near social proof testimonials",
+          "Before feature sections",
+          "On about/company pages",
+          "In footer as secondary trust indicator"
+        ],
+        "bestPractices": [
+          "Place early on page for maximum trust-building",
+          "Update regularly to show current partnerships",
+          "Don't fabricate or exaggerate relationships",
+          "Link to case studies if available",
+          "Consider adding client count if impressive",
+          "Balance quantity with quality (better to show 6 great logos than 20 mediocre ones)"
+        ],
+        "commonMistakes": [
+          "Logos too small to recognize",
+          "Inconsistent sizing/spacing",
+          "Too many logos causing clutter",
+          "Using low-quality images",
+          "Not optimizing for mobile",
+          "Forgetting to get permission to use logos"
+        ]
+      }
+    }
+  }
