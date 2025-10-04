@@ -1,0 +1,270 @@
+{
+    "designSystemProfile": {
+      "name": "Modern Data Visualization Dashboard",
+      "version": "1.0",
+      "description": "Clean, minimal dashboard design with emphasis on data visualization and metrics presentation",
+      
+      "colorPalette": {
+        "primary": {
+          "background": "#FFFFFF",
+          "text": "#000000",
+          "secondary_text": "#666666",
+          "muted_text": "#999999"
+        },
+        "accent": {
+          "dots_visualization": [
+            "#4A90E2",
+            "#7ED321", 
+            "#F5A623",
+            "#D0021B",
+            "#9013FE",
+            "#50E3C2",
+            "#BD10E0"
+          ],
+          "brand_colors": ["#4A90E2", "#7ED321", "#F5A623"]
+        }
+      },
+  
+      "typography": {
+        "hierarchy": {
+          "display_number": {
+            "fontSize": "clamp(48px, 8vw, 120px)",
+            "fontWeight": "300",
+            "letterSpacing": "-0.02em",
+            "color": "#000000",
+            "fontFamily": "system-ui, -apple-system, sans-serif"
+          },
+          "metric_label": {
+            "fontSize": "14px",
+            "fontWeight": "400",
+            "color": "#666666",
+            "textTransform": "lowercase",
+            "letterSpacing": "0.01em"
+          },
+          "brand_text": {
+            "fontSize": "16px",
+            "fontWeight": "500",
+            "color": "#666666",
+            "letterSpacing": "0.1em"
+          },
+          "tagline": {
+            "fontSize": "12px",
+            "fontWeight": "400",
+            "color": "#999999"
+          }
+        }
+      },
+  
+      "layout": {
+        "structure": {
+          "type": "centered_vertical",
+          "maxWidth": "1200px",
+          "padding": "40px 20px",
+          "spacing": {
+            "section_gap": "60px",
+            "element_gap": "20px",
+            "brand_spacing": "40px"
+          }
+        },
+        "grid": {
+          "type": "flexible",
+          "columns": "auto-fit",
+          "gap": "40px",
+          "alignment": "center"
+        }
+      },
+  
+      "components": {
+        "header": {
+          "layout": "horizontal_center",
+          "elements": [
+            {
+              "type": "tagline",
+              "position": "top",
+              "alignment": "center",
+              "styling": "muted_text"
+            }
+          ]
+        },
+        
+        "brand_section": {
+          "layout": "horizontal_logos",
+          "alignment": "center",
+          "spacing": "60px",
+          "elements": [
+            {
+              "type": "logo",
+              "size": "medium",
+              "opacity": "0.7"
+            }
+          ],
+          "responsive": {
+            "mobile": "vertical_stack",
+            "tablet": "wrap_center"
+          }
+        },
+  
+        "metrics_display": {
+          "layout": "centered_card",
+          "background": "transparent",
+          "elements": [
+            {
+              "type": "large_number",
+              "position": "center",
+              "formatting": "comma_separated"
+            },
+            {
+              "type": "metric_label",
+              "position": "below_number",
+              "alignment": "center"
+            },
+            {
+              "type": "context_label",
+              "position": "above_number",
+              "alignment": "center",
+              "styling": "muted"
+            }
+          ]
+        },
+  
+        "data_visualization": {
+          "type": "scatter_dots",
+          "layout": "organic_distribution",
+          "elements": [
+            {
+              "type": "data_point",
+              "shape": "circle",
+              "size": "8px",
+              "colors": "accent_palette",
+              "opacity": "0.8",
+              "distribution": "pseudo_random"
+            }
+          ],
+          "animation": {
+            "entrance": "fade_in_up",
+            "duration": "0.6s",
+            "easing": "ease-out"
+          }
+        },
+  
+        "document_stack": {
+          "type": "isometric_illustration",
+          "position": "bottom_center",
+          "styling": {
+            "perspective": "isometric",
+            "layers": "stacked_papers",
+            "color": "#F5F5F5",
+            "shadow": "subtle"
+          }
+        }
+      },
+  
+      "interactions": {
+        "hover_states": {
+          "logos": {
+            "opacity": "1.0",
+            "transition": "0.2s ease"
+          },
+          "data_points": {
+            "scale": "1.2",
+            "opacity": "1.0",
+            "transition": "0.15s ease"
+          }
+        },
+        "loading_states": {
+          "numbers": {
+            "animation": "count_up",
+            "duration": "2s"
+          }
+        }
+      },
+  
+      "spacing_system": {
+        "base_unit": "8px",
+        "scale": [
+          "4px",   // 0.5x
+          "8px",   // 1x
+          "16px",  // 2x
+          "24px",  // 3x
+          "32px",  // 4x
+          "40px",  // 5x
+          "48px",  // 6x
+          "64px",  // 8x
+          "80px",  // 10x
+          "120px"  // 15x
+        ]
+      },
+  
+      "responsive_design": {
+        "breakpoints": {
+          "mobile": "320px",
+          "tablet": "768px", 
+          "desktop": "1024px",
+          "large": "1440px"
+        },
+        "scaling": {
+          "typography": "fluid_scaling",
+          "spacing": "proportional",
+          "layout": "stack_on_mobile"
+        }
+      },
+  
+      "visual_principles": {
+        "emphasis": [
+          "Large numbers as focal points",
+          "Generous whitespace",
+          "Subtle visual hierarchy",
+          "Data as decoration"
+        ],
+        "mood": [
+          "Professional",
+          "Clean",
+          "Data-driven",
+          "Trustworthy"
+        ],
+        "style_keywords": [
+          "minimal",
+          "data-centric",
+          "enterprise",
+          "modern",
+          "accessible",
+          "scalable"
+        ]
+      },
+  
+      "implementation_notes": {
+        "css_approach": "utility-first or styled-components",
+        "animation_library": "framer-motion or CSS transitions",
+        "responsive_strategy": "mobile-first",
+        "accessibility": [
+          "High contrast ratios",
+          "Semantic HTML structure", 
+          "Screen reader friendly",
+          "Keyboard navigation support"
+        ],
+        "performance": [
+          "Lazy load animations",
+          "Optimize large numbers rendering",
+          "Efficient dot distribution algorithms"
+        ]
+      },
+  
+      "component_patterns": {
+        "metric_card": {
+          "structure": "context_label + large_number + description",
+          "spacing": "tight_vertical_rhythm",
+          "alignment": "center_everything"
+        },
+        "brand_showcase": {
+          "structure": "horizontal_logo_strip",
+          "treatment": "subtle_opacity_default",
+          "spacing": "equal_distribution"
+        },
+        "data_decoration": {
+          "purpose": "visual_interest_not_functional",
+          "placement": "background_scattered",
+          "colors": "brand_palette_rotation"
+        }
+      }
+    }
+  }

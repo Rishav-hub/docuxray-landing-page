@@ -1,0 +1,138 @@
+{
+    "design_system_profile": {
+      "brand_identity": {
+        "name": "DocuXray",
+        "logo_style": "minimalist_geometric",
+        "brand_colors": {
+          "primary_purple": "#8B5CF6",
+          "accent_purple": "#A855F7",
+          "dark_text": "#1F2937",
+          "secondary_text": "#6B7280",
+          "background_light": "#FFFFFF",
+          "background_subtle": "#F9FAFB"
+        }
+      },
+      "typography": {
+        "hierarchy": {
+          "hero_heading": {
+            "size": "4xl_to_6xl",
+            "weight": "400_to_500",
+            "line_height": "tight",
+            "color": "dark_primary",
+            "style": "serif_or_elegant_sans"
+          },
+          "subheading": {
+            "size": "lg_to_xl",
+            "weight": "400",
+            "color": "secondary_text",
+            "line_height": "relaxed"
+          },
+          "navigation": {
+            "size": "base",
+            "weight": "500",
+            "color": "dark_text"
+          }
+        },
+        "emphasis": {
+          "highlight_words": {
+            "color": "primary_purple",
+            "treatment": "color_change_only"
+          }
+        }
+      },
+      "layout_structure": {
+        "header": {
+          "style": "minimal_clean",
+          "alignment": "space_between",
+          "elements": ["logo_left", "nav_center", "cta_right"],
+          "padding": "generous_horizontal",
+          "background": "transparent_or_white"
+        },
+        "announcement_bar": {
+          "position": "top_full_width",
+          "background": "primary_purple_gradient",
+          "text_color": "white",
+          "alignment": "center",
+          "padding": "compact_vertical"
+        },
+        "hero_section": {
+          "layout": "center_aligned",
+          "content_max_width": "container_lg",
+          "spacing": "generous_vertical",
+          "background": "clean_white_or_subtle"
+        }
+      },
+      "component_patterns": {
+        "buttons": {
+          "primary": {
+            "background": "primary_purple",
+            "text_color": "white",
+            "border_radius": "small_to_medium",
+            "padding": "medium_horizontal_small_vertical",
+            "hover_effect": "slight_darken",
+            "font_weight": "medium"
+          },
+          "secondary": {
+            "background": "transparent",
+            "text_color": "dark_text",
+            "border": "subtle_gray",
+            "hover_effect": "background_fill_subtle"
+          }
+        },
+        "navigation": {
+          "style": "horizontal_inline",
+          "items_spacing": "generous",
+          "hover_effect": "subtle_color_change",
+          "active_state": "color_highlight"
+        }
+      },
+      "visual_principles": {
+        "whitespace": {
+          "philosophy": "generous_breathing_room",
+          "section_spacing": "large_vertical_gaps",
+          "content_spacing": "balanced_hierarchy"
+        },
+        "contrast": {
+          "text_background": "high_contrast",
+          "color_accents": "strategic_purple_highlights",
+          "visual_hierarchy": "clear_size_weight_differences"
+        },
+        "alignment": {
+          "primary": "center_aligned_content",
+          "secondary": "left_aligned_body_text",
+          "consistency": "strict_grid_system"
+        }
+      },
+      "content_strategy": {
+        "messaging_tone": "professional_approachable",
+        "headline_pattern": "problem_solution_benefit",
+        "cta_language": "action_oriented_clear",
+        "technical_communication": "accessible_not_jargony"
+      },
+      "responsive_behavior": {
+        "mobile_first": true,
+        "breakpoint_strategy": "content_driven",
+        "navigation": "hamburger_or_simplified",
+        "hero_text": "stacked_centered",
+        "button_layout": "full_width_mobile_stacked"
+      },
+      "interaction_design": {
+        "micro_interactions": "subtle_smooth",
+        "hover_states": "gentle_color_transitions",
+        "loading_states": "minimal_elegant",
+        "form_feedback": "inline_validation"
+      },
+      "accessibility_considerations": {
+        "color_contrast": "wcag_aa_compliant",
+        "focus_indicators": "visible_purple_outline",
+        "text_scaling": "responsive_fluid",
+        "keyboard_navigation": "logical_tab_order"
+      },
+      "implementation_notes": {
+        "css_framework_compatibility": "tailwind_friendly",
+        "component_modularity": "atomic_design_principles",
+        "state_management": "clear_visual_states",
+        "performance": "optimized_minimal_css"
+      }
+    }
+  }
