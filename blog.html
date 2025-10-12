@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - DocuXray | Latest Updates & Insights</title>
+    <meta name="description" content="Explore insights on document automation, AI tools for MSMEs, and technical deep-dives into Document AI technology.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="blog-styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html"><h1>DocuXray</h1></a>
+                </div>
+                <nav class="navigation">
+                    <ul>
+                        <li><a href="index.html#pricing">Pricing</a></li>
+                        <li><a href="blog.html" class="active">Blogs</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                    </ul>
+                </nav>
+                <div class="header-cta">
+                    <button class="btn btn-secondary" onclick="window.location.href='index.html'">Back to Home</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="blog-hero">
+        <div class="container">
+            <div class="blog-hero-content">
+                <h1 class="blog-hero-title">Blog</h1>
+                <p class="blog-hero-subtitle">Latest updates from the team</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Section -->
+    <section class="blog-featured">
+        <div class="container">
+            <h2 class="section-label">Featured</h2>
+            <div class="blog-grid" id="featured-grid">
+                <!-- Featured blog cards will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Posts Section -->
+    <section class="blog-recent">
+        <div class="container">
+            <div class="blog-recent-header">
+                <h2 class="section-heading">Recent posts</h2>
+                <div class="blog-filters">
+                    <button class="filter-pill active" data-filter="all">All</button>
+                    <button class="filter-pill" data-filter="case-study">Case Studies</button>
+                    <button class="filter-pill" data-filter="blog-post">Blog Posts</button>
+                    <button class="filter-pill" data-filter="product">Product</button>
+                </div>
+            </div>
+            <div class="blog-grid blog-grid-text" id="recent-grid">
+                <!-- Recent blog cards will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>DocuXray</h3>
+                    <p>Enterprise Document AI Solutions</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Product</h4>
+                        <ul>
+                            <li><a href="#">Features</a></li>
+                            <li><a href="#">Pricing</a></li>
+                            <li><a href="#">Security</a></li>
+                            <li><a href="#">API</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">Documentation</a></li>
+                            <li><a href="#">Status</a></li>
+                            <li><a href="#">Community</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 DocuXray. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="blog.js"></script>
+</body>
+</html>
+
