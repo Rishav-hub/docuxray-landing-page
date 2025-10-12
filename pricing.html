@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - DocuXray | Enterprise Document AI Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <p>🚀 New: AI-powered contract analysis now available - Process 1000+ pages in minutes</p>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html" style="text-decoration: none; color: inherit;">
+                        <h1>DocuXray</h1>
+                    </a>
+                </div>
+                <nav class="navigation">
+                    <ul>
+                        <li><a href="pricing.html" class="active">Pricing</a></li>
+                        <li><a href="blog.html">Blogs</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                    </ul>
+                </nav>
+                <div class="header-cta">
+                    <button class="btn btn-secondary" onclick="openModal('contact')">Contact Sales</button>
+                </div>
+                <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Pricing Hero / Trust Section -->
+    <section class="pricing-hero">
+        <div class="container">
+            <div class="pricing-hero-content">
+                <h2 class="pricing-hero-title">Pricing</h2>
+                <p class="pricing-hero-subtitle">From startups to Fortune 500s, companies of all stages trust DocuXray with their document ingestion.</p>
+            </div>
+            <div class="pricing-logo-grid">
+                <div class="pricing-logo-item">
+                    <img src="https://www.firstsource.com/themes/custom/first_source/images/Firstsource-logo.svg" alt="Firstsource" class="pricing-company-logo">
+                </div>
+                <div class="pricing-logo-item">
+                    <img src="https://moraegpro.wpenginepowered.com/wp-content/uploads/2022/11/logo-morae.svg" alt="Morae" class="pricing-company-logo">
+                </div>
+                <div class="pricing-logo-item">
+                    <img src="https://www.sksbusinessservices.com/wp-content/uploads/2021/04/cropped-SKSBS-1.png" alt="SKS Business Services" class="pricing-company-logo">
+                </div>
+                <div class="pricing-logo-item">
+                    <img src="https://bhalaria.in/cdn/shop/files/LogoImage_132683164841010010_100x@2x.jpg?v=1693983552" alt="Bhalaria" class="pricing-company-logo">
+                </div>
+                <div class="pricing-logo-item">
+                    <img src="https://www.mcdonalds.com/content/dam/sites/usa/nfl/icons/arches-logo_108x108.jpg" alt="McDonald's" class="pricing-company-logo">
+                </div>
+                <div class="pricing-logo-item">
+                    <img src="https://img-cdn.publive.online/fit-in/1200x675/filters:format(webp)/entrackr/media/post_attachments/wp-content/uploads/2024/07/Fresh.png" alt="Freshbus" class="pricing-company-logo">
+                </div>
+                <div class="pricing-logo-item">
+                    <img src="https://www.firstsource.com/themes/custom/first_source/images/Firstsource-logo.svg" alt="Firstsource" class="pricing-company-logo">
+                </div>
+                <div class="pricing-logo-item">
+                    <img src="https://moraegpro.wpenginepowered.com/wp-content/uploads/2022/11/logo-morae.svg" alt="Morae" class="pricing-company-logo">
+                </div>
+                <div class="pricing-logo-item">
+                    <img src="https://www.sksbusinessservices.com/wp-content/uploads/2021/04/cropped-SKSBS-1.png" alt="SKS Business Services" class="pricing-company-logo">
+                </div>
+                <div class="pricing-logo-item">
+                    <img src="https://bhalaria.in/cdn/shop/files/LogoImage_132683164841010010_100x@2x.jpg?v=1693983552" alt="Bhalaria" class="pricing-company-logo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Plans Section -->
+    <section class="pricing-plans">
+        <div class="container">
+            <div class="pricing-plans-header">
+                <h2 class="pricing-plans-title">Choose the plan that fits your business</h2>
+                <p class="pricing-plans-subtitle">Start automating your documents today — scale as you grow.</p>
+                <p class="pricing-plans-savings">(Save 15% with yearly billing)</p>
+            </div>
+
+            <!-- Billing Toggle -->
+            <div class="billing-toggle-container">
+                <span class="toggle-label" data-period="monthly">Monthly</span>
+                <div class="billing-toggle">
+                    <input type="checkbox" id="billing-toggle" class="billing-toggle-input">
+                    <label for="billing-toggle" class="billing-toggle-label">
+                        <span class="billing-toggle-slider"></span>
+                    </label>
+                </div>
+                <span class="toggle-label active" data-period="yearly">Yearly <span class="savings-badge">Save 15%</span></span>
+            </div>
+
+            <!-- Pricing Cards -->
+            <div class="pricing-cards-grid">
+                <!-- Free Plan Card -->
+                <div class="pricing-card">
+                    <div class="pricing-card-header">
+                        <h3 class="pricing-card-name">Free Plan</h3>
+                        <p class="pricing-card-tagline">Try Document AI for Free</p>
+                    </div>
+                    <div class="pricing-card-price">
+                        <div class="price-wrapper">
+                            <span class="currency">₹</span>
+                            <span class="amount">0</span>
+                            <span class="period">/ month</span>
+                        </div>
+                        <p class="yearly-total" style="display: none;">Always free, no credit card required</p>
+                    </div>
+                    <div class="pricing-card-divider"></div>
+                    <div class="pricing-card-features">
+                        <p class="features-title">Key Features Include:</p>
+                        <ul class="features-list">
+                            <li><span class="feature-icon">✓</span>Process up to <strong>20 documents/day</strong></li>
+                            <li><span class="feature-icon">✓</span>Extract data from invoices, receipts & contracts</li>
+                            <li><span class="feature-icon">✓</span>Simple dashboard & analytics</li>
+                            <li><span class="feature-icon">✓</span>99% OCR accuracy</li>
+                            <li><span class="feature-icon-disabled">✗</span><span class="feature-disabled">No email support</span></li>
+                            <li><span class="feature-icon-disabled">✗</span><span class="feature-disabled">No Excel / PDF export</span></li>
+                        </ul>
+                    </div>
+                    <div class="pricing-card-ideal">
+                        <p class="ideal-title">Ideal For:</p>
+                        <p class="ideal-description">Individuals exploring document automation capabilities</p>
+                    </div>
+                    <button class="btn btn-primary pricing-cta" onclick="openModal('demo')">Start Free</button>
+                </div>
+
+                <!-- Basic Plan Card -->
+                <div class="pricing-card pricing-card-featured">
+                    <div class="featured-badge">Most Popular</div>
+                    <div class="pricing-card-header">
+                        <h3 class="pricing-card-name">Basic Plan</h3>
+                        <p class="pricing-card-tagline">Get Started with Document AI</p>
+                    </div>
+                    <div class="pricing-card-price">
+                        <div class="price-wrapper">
+                            <span class="currency">₹</span>
+                            <span class="amount" data-monthly="999" data-yearly="849">999</span>
+                            <span class="period">/ month</span>
+                        </div>
+                        <p class="yearly-total" style="display: none;">Billed yearly at ₹10,188 (Save ₹1,788)</p>
+                    </div>
+                    <div class="pricing-card-divider"></div>
+                    <div class="pricing-card-features">
+                        <p class="features-title">Everything in Free, plus:</p>
+                        <ul class="features-list">
+                            <li><span class="feature-icon">✓</span>Process up to <strong>1,000 documents/month</strong></li>
+                            <li><span class="feature-icon">✓</span>Export to Excel / PDF</li>
+                            <li><span class="feature-icon">✓</span>Email support</li>
+                            <li><span class="feature-icon">✓</span>API access</li>
+                            <li><span class="feature-icon">✓</span>Advanced analytics</li>
+                            <li><span class="feature-icon">✓</span>Priority processing</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-card-ideal">
+                        <p class="ideal-title">Ideal For:</p>
+                        <p class="ideal-description">Small businesses just beginning their automation journey</p>
+                    </div>
+                    <button class="btn btn-primary pricing-cta" onclick="openModal('demo')">Start Free Trial</button>
+                </div>
+
+                <!-- Pro Plan Card -->
+                <div class="pricing-card">
+                    <div class="pricing-card-header">
+                        <h3 class="pricing-card-name">Pro Plan</h3>
+                        <p class="pricing-card-tagline">Scale Your Document Automation</p>
+                    </div>
+                    <div class="pricing-card-price">
+                        <div class="price-wrapper">
+                            <span class="currency">₹</span>
+                            <span class="amount" data-monthly="2499" data-yearly="2124">2,499</span>
+                            <span class="period">/ month</span>
+                        </div>
+                        <p class="yearly-total" style="display: none;">Billed yearly at ₹25,488 (Save ₹4,500)</p>
+                    </div>
+                    <div class="pricing-card-divider"></div>
+                    <div class="pricing-card-features">
+                        <p class="features-title">Everything in Basic, plus:</p>
+                        <ul class="features-list">
+                            <li><span class="feature-icon">✓</span>Process up to <strong>10,000 documents/month</strong></li>
+                            <li><span class="feature-icon">✓</span>Advanced analytics dashboard</li>
+                            <li><span class="feature-icon">✓</span>API access & integrations (Tally, QuickBooks, etc.)</li>
+                            <li><span class="feature-icon">✓</span>AI accuracy tuning (train on your document formats)</li>
+                            <li><span class="feature-icon">✓</span>Multi-user access</li>
+                            <li><span class="feature-icon">✓</span>Priority support & onboarding assistance</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-card-ideal">
+                        <p class="ideal-title">Ideal For:</p>
+                        <p class="ideal-description">Businesses scaling fast or handling diverse document types</p>
+                    </div>
+                    <button class="btn btn-primary pricing-cta" onclick="openModal('demo')">Upgrade to Pro</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Transform Your Document Processing?</h2>
+                <p>Join 500+ enterprises already using DocuXray to automate their document workflows.</p>
+                <div class="cta-actions">
+                    <button class="btn btn-primary" onclick="openModal('demo')">Request Demo</button>
+                    <button class="btn btn-secondary" onclick="openModal('upload')">Upload Document</button>
+                    <button class="btn btn-secondary" onclick="openModal('contact')">Contact Sales</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modals -->
+    <div id="demo-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Request a Demo</h3>
+                <span class="modal-close" onclick="closeModal()">&times;</span>
+            </div>
+            <form class="modal-form">
+                <div class="form-group">
+                    <label for="demo-name">Full Name</label>
+                    <input type="text" id="demo-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="demo-email">Business Email</label>
+                    <input type="email" id="demo-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="demo-company">Company</label>
+                    <input type="text" id="demo-company" required>
+                </div>
+                <div class="form-group">
+                    <label for="demo-use-case">Primary Use Case</label>
+                    <select id="demo-use-case" required>
+                        <option value="">Select use case</option>
+                        <option value="contracts">Contract Analysis</option>
+                        <option value="invoices">Invoice Processing</option>
+                        <option value="compliance">Compliance Documents</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Schedule Demo</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="upload-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Upload Sample Document</h3>
+                <span class="modal-close" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="upload-area">
+                <div class="upload-icon">📄</div>
+                <p>Drag & drop your document here or click to browse</p>
+                <input type="file" id="document-upload" accept=".pdf,.doc,.docx,.jpg,.png" style="display: none;">
+                <button class="btn btn-primary" onclick="document.getElementById('document-upload').click()">Choose File</button>
+                <p class="upload-note">Supported formats: PDF, DOC, DOCX, JPG, PNG (Max 10MB)</p>
+            </div>
+            <div class="upload-progress" style="display: none;">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="upload-progress-fill"></div>
+                </div>
+                <p>Processing document...</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Contact Sales</h3>
+                <span class="modal-close" onclick="closeModal()">&times;</span>
+            </div>
+            <form class="modal-form">
+                <div class="form-group">
+                    <label for="contact-name">Full Name</label>
+                    <input type="text" id="contact-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-email">Business Email</label>
+                    <input type="email" id="contact-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-company">Company</label>
+                    <input type="text" id="contact-company" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-message">Message</label>
+                    <textarea id="contact-message" rows="4" placeholder="Tell us about your document processing needs..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>DocuXray</h3>
+                    <p>Enterprise Document AI Solutions</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Product</h4>
+                        <ul>
+                            <li><a href="#">Features</a></li>
+                            <li><a href="pricing.html">Pricing</a></li>
+                            <li><a href="#">Security</a></li>
+                            <li><a href="#">API</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">Documentation</a></li>
+                            <li><a href="#">Status</a></li>
+                            <li><a href="#">Community</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 DocuXray. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

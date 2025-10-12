@@ -233,6 +233,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize testimonial carousel
     initTestimonialCarousel();
+
+    // Initialize pricing toggle
+    initPricingToggle();
 });
 
 // Initialize Testimonial Carousel with Drag Scrolling
@@ -1609,4 +1612,115 @@ function initLiquidBackground() {
             container._liquidResizeObserver.disconnect();
         }
     });
+}
+
+// Initialize Pricing Toggle Functionality
+function initPricingToggle() {
+    const toggle = document.getElementById('billing-toggle');
+    const toggleLabels = document.querySelectorAll('.toggle-label');
+    const priceAmounts = document.querySelectorAll('.amount');
+    const yearlyTotals = document.querySelectorAll('.yearly-total');
+
+    if (!toggle) {
+        console.log('Pricing toggle not found');
+        return;
+    }
+
+    // Pricing data
+    const pricingData = {
+        basic: {
+            monthly: 999,
+            yearly: 849,
+            yearlyTotal: 10188,
+            yearlySavings: 1788
+        },
+        pro: {
+            monthly: 2499,
+            yearly: 2124,
+            yearlyTotal: 25488,
+            yearlySavings: 4500
+        }
+    };
+
+    // Function to update pricing display
+    function updatePricing(isYearly) {
+        priceAmounts.forEach((amount, index) => {
+            // Skip Free Plan (index 0), only update Basic (index 1) and Pro (index 2)
+            if (index === 0) return;
+            
+            const plan = index === 1 ? 'basic' : 'pro';
+            const newPrice = isYearly ? pricingData[plan].yearly : pricingData[plan].monthly;
+            
+            // Animate price change
+            amount.style.opacity = '0';
+            amount.style.transform = 'translateY(-10px)';
+            
+            setTimeout(() => {
+                amount.textContent = newPrice.toLocaleString('en-IN');
+                amount.style.opacity = '1';
+                amount.style.transform = 'translateY(0)';
+            }, 150);
+        });
+
+        // Show/hide yearly total
+        yearlyTotals.forEach((yearlyTotal, index) => {
+            // Free Plan has special text, Basic and Pro have pricing
+            if (index === 0) {
+                // Free Plan yearly total
+                if (isYearly) {
+                    yearlyTotal.style.display = 'block';
+                    yearlyTotal.textContent = 'Always free, no credit card required';
+                } else {
+                    yearlyTotal.style.display = 'none';
+                }
+                return;
+            }
+            
+            const plan = index === 1 ? 'basic' : 'pro';
+            if (isYearly) {
+                yearlyTotal.style.display = 'block';
+                yearlyTotal.textContent = `Billed yearly at ₹${pricingData[plan].yearlyTotal.toLocaleString('en-IN')} (Save ₹${pricingData[plan].yearlySavings.toLocaleString('en-IN')})`;
+                yearlyTotal.style.opacity = '0';
+                setTimeout(() => {
+                    yearlyTotal.style.opacity = '1';
+                }, 150);
+            } else {
+                yearlyTotal.style.opacity = '0';
+                setTimeout(() => {
+                    yearlyTotal.style.display = 'none';
+                }, 150);
+            }
+        });
+
+        // Update toggle label active states
+        toggleLabels.forEach(label => {
+            const period = label.getAttribute('data-period');
+            if ((isYearly && period === 'yearly') || (!isYearly && period === 'monthly')) {
+                label.classList.add('active');
+            } else {
+                label.classList.remove('active');
+            }
+        });
+    }
+
+    // Toggle change handler
+    toggle.addEventListener('change', function() {
+        updatePricing(this.checked);
+    });
+
+    // Click handlers for labels
+    toggleLabels.forEach(label => {
+        label.addEventListener('click', function() {
+            const period = this.getAttribute('data-period');
+            const isYearly = period === 'yearly';
+            toggle.checked = isYearly;
+            updatePricing(isYearly);
+        });
+    });
+
+    // Set initial state to yearly (as per design showing yearly as active)
+    toggle.checked = true;
+    updatePricing(true);
+
+    console.log('Pricing toggle initialized successfully');
 }
