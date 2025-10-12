@@ -230,7 +230,154 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize logo marquee
     initLogoMarquee();
+
+    // Initialize testimonial carousel
+    initTestimonialCarousel();
 });
+
+// Initialize Testimonial Carousel with Drag Scrolling
+function initTestimonialCarousel() {
+    const container = document.querySelector('.testimonial-carousel-container');
+    const track = document.querySelector('.testimonial-carousel-track');
+    
+    if (!container || !track) {
+        console.log('Testimonial carousel elements not found');
+        return;
+    }
+
+    // Clone cards for infinite loop
+    const cards = Array.from(track.children);
+    cards.forEach(card => {
+        const clone = card.cloneNode(true);
+        track.appendChild(clone);
+    });
+
+    let isDragging = false;
+    let startX = 0;
+    let currentTranslate = 0;
+    let prevTranslate = 0;
+    let animationID = null;
+    let currentX = 0;
+
+    // Get total width for infinite scroll
+    const cardWidth = 450; // Match CSS flex-basis
+    const gap = 24; // Match CSS gap (var(--spacing-xl) = 1.5rem = 24px)
+    const originalCardsCount = cards.length;
+    const singleSetWidth = originalCardsCount * (cardWidth + gap);
+
+    // Mouse down event
+    container.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        startX = e.pageX - currentTranslate;
+        container.style.cursor = 'grabbing';
+        
+        // Cancel animation if running
+        if (animationID) {
+            cancelAnimationFrame(animationID);
+            animationID = null;
+        }
+        
+        // Remove transition for immediate response
+        track.style.transition = 'none';
+        
+        // Prevent default drag behavior
+        e.preventDefault();
+    });
+
+    // Mouse leave event
+    container.addEventListener('mouseleave', () => {
+        if (isDragging) {
+            isDragging = false;
+            container.style.cursor = 'grab';
+            track.style.transition = '';
+        }
+    });
+
+    // Mouse up event
+    container.addEventListener('mouseup', () => {
+        if (isDragging) {
+            isDragging = false;
+            container.style.cursor = 'grab';
+            track.style.transition = '';
+        }
+    });
+
+    // Mouse move event
+    container.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        
+        e.preventDefault();
+        currentX = e.pageX;
+        currentTranslate = currentX - startX;
+        
+        // Normalize position for infinite scroll
+        normalizePosition();
+        setSliderPosition();
+    });
+
+    // Touch events for mobile
+    container.addEventListener('touchstart', (e) => {
+        isDragging = true;
+        startX = e.touches[0].pageX - currentTranslate;
+        
+        if (animationID) {
+            cancelAnimationFrame(animationID);
+            animationID = null;
+        }
+        
+        track.style.transition = 'none';
+    }, { passive: true });
+
+    container.addEventListener('touchend', () => {
+        if (isDragging) {
+            isDragging = false;
+            track.style.transition = '';
+        }
+    });
+
+    container.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        
+        currentX = e.touches[0].pageX;
+        currentTranslate = currentX - startX;
+        
+        normalizePosition();
+        setSliderPosition();
+    }, { passive: true });
+
+    // Normalize position for seamless infinite loop
+    function normalizePosition() {
+        if (currentTranslate > 0) {
+            currentTranslate -= singleSetWidth;
+            startX += singleSetWidth;
+        } else if (currentTranslate < -singleSetWidth) {
+            currentTranslate += singleSetWidth;
+            startX -= singleSetWidth;
+        }
+    }
+
+    // Update slider position
+    function setSliderPosition() {
+        track.style.transform = `translateX(${currentTranslate}px)`;
+    }
+
+    // Prevent text selection during drag
+    container.addEventListener('selectstart', (e) => {
+        if (isDragging) {
+            e.preventDefault();
+        }
+    });
+
+    // Prevent image dragging
+    const images = container.querySelectorAll('img');
+    images.forEach(img => {
+        img.addEventListener('dragstart', (e) => {
+            e.preventDefault();
+        });
+    });
+
+    console.log('Testimonial carousel initialized successfully');
+}
 
 // Animate metrics on scroll
 function animateMetricsOnScroll() {
