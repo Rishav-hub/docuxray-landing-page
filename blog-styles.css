@@ -289,6 +289,8 @@
     letter-spacing: 0.05em;
     margin-bottom: 3rem;
     transition: color 0.3s ease;
+    /* Better touch target */
+    padding: 8px 0;
 }
 
 .back-link:hover {
@@ -326,6 +328,9 @@
     line-height: 1.5;
     transition: color 0.3s ease, padding-left 0.3s ease;
     padding-left: 0;
+    /* Better touch target on mobile */
+    padding-top: 4px;
+    padding-bottom: 4px;
 }
 
 .toc-link:hover {
@@ -554,6 +559,11 @@
     font-weight: 600;
     cursor: pointer;
     transition: transform 0.3s ease;
+    /* Better touch target */
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .article-cta .btn:hover {
@@ -652,49 +662,85 @@
 @media (max-width: 1200px) {
     .blog-post-layout {
         grid-template-columns: 250px 1fr;
-        gap: 2rem;
+        gap: 2.5rem;
     }
     
     .blog-sidebar-right {
         display: none;
+    }
+    
+    .container-wide {
+        padding: 0 1.5rem;
     }
 }
 
 @media (max-width: 992px) {
     .blog-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 1.75rem;
     }
     
     .related-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 1.75rem;
     }
     
     .blog-hero-title {
-        font-size: 3rem;
+        font-size: 2.75rem;
     }
     
     .article-title {
-        font-size: 2.5rem;
+        font-size: 2.35rem;
+    }
+    
+    .blog-card-image {
+        height: 220px;
     }
 }
 
 @media (max-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+    
+    .container-wide {
+        padding: 0 20px;
+    }
+    
     .blog-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
     
     .related-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
     
     .blog-recent-header {
         flex-direction: column;
         align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .blog-filters {
+        width: 100%;
+        justify-content: flex-start;
+    }
+    
+    .filter-pill {
+        font-size: 14px;
+        padding: 8px 16px;
+        /* Better touch target */
+        min-height: 40px;
+        display: inline-flex;
+        align-items: center;
     }
     
     .blog-post-layout {
         grid-template-columns: 1fr;
         padding: 2rem 0;
+        gap: 2rem;
     }
     
     .blog-sidebar-left {
@@ -705,6 +751,9 @@
         position: relative;
         top: 0;
         margin-bottom: 2rem;
+        padding: 1.5rem;
+        background: #f9f9f9;
+        border-radius: 8px;
     }
     
     .blog-hero {
@@ -712,19 +761,275 @@
     }
     
     .blog-hero-title {
-        font-size: 2rem;
+        font-size: 2.25rem;
+        padding: 0 16px;
     }
     
     .blog-hero-subtitle {
         font-size: 1rem;
+        padding: 0 16px;
+    }
+    
+    .blog-featured,
+    .blog-recent {
+        padding: 60px 0;
+    }
+    
+    .section-label {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .section-heading {
+        font-size: 1.75rem;
+    }
+    
+    .blog-card {
+        margin: 0 auto;
+        max-width: 500px;
+    }
+    
+    .blog-card-title {
+        font-size: 1.2rem;
+    }
+    
+    .blog-card-description {
+        font-size: 0.9rem;
+    }
+    
+    .article-header {
+        margin-bottom: 2rem;
     }
     
     .article-title {
         font-size: 2rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.25;
+    }
+    
+    .article-body {
+        font-size: 1.0625rem;
+        line-height: 1.75;
+    }
+    
+    .article-body h2 {
+        font-size: 1.625rem;
+        margin-top: 2.5rem;
+        margin-bottom: 1.25rem;
+    }
+    
+    .article-body h3 {
+        font-size: 1.35rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .featured-media {
+        margin-bottom: 2rem;
+    }
+    
+    .media-placeholder {
+        height: 300px;
+    }
+    
+    .related-articles {
+        padding: 60px 0;
+    }
+    
+    .related-heading {
+        font-size: 2rem;
+    }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 16px;
+    }
+    
+    .container-wide {
+        padding: 0 16px;
+    }
+    
+    .blog-hero {
+        padding: 50px 0 30px;
+    }
+    
+    .blog-hero-title {
+        font-size: 1.875rem;
+        line-height: 1.2;
+    }
+    
+    .blog-hero-subtitle {
+        font-size: 0.9375rem;
+    }
+    
+    .blog-featured,
+    .blog-recent {
+        padding: 40px 0;
+    }
+    
+    .section-heading {
+        font-size: 1.5rem;
+    }
+    
+    .blog-card {
+        max-width: 100%;
+    }
+    
+    .blog-card-image {
+        height: 200px;
+    }
+    
+    .blog-card-content {
+        padding: 1.25rem;
+    }
+    
+    .blog-card-title {
+        font-size: 1.125rem;
+    }
+    
+    .blog-card-description {
+        font-size: 0.875rem;
+    }
+    
+    .blog-grid-text .blog-card {
+        padding: 1.25rem;
+    }
+    
+    .filter-pill {
+        font-size: 13px;
+        padding: 7px 14px;
+        min-height: 38px;
+    }
+    
+    .blog-post-layout {
+        padding: 1.5rem 0;
+    }
+    
+    .table-of-contents {
+        padding: 1.25rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .toc-heading {
+        font-size: 0.8rem;
+    }
+    
+    .toc-link {
+        font-size: 0.875rem;
+    }
+    
+    .article-title {
+        font-size: 1.75rem;
+        margin-bottom: 1.25rem;
     }
     
     .article-body {
         font-size: 1rem;
+        line-height: 1.7;
+    }
+    
+    .article-body h2 {
+        font-size: 1.5rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .article-body h3 {
+        font-size: 1.25rem;
+        margin-top: 1.75rem;
+        margin-bottom: 0.875rem;
+    }
+    
+    .article-body ul,
+    .article-body ol {
+        padding-left: 1.5rem;
+    }
+    
+    .article-body blockquote {
+        padding-left: 1rem;
+        margin: 1.5rem 0;
+    }
+    
+    .article-body pre {
+        padding: 1rem;
+        margin: 1.5rem 0;
+    }
+    
+    .media-placeholder {
+        height: 250px;
+    }
+    
+    .placeholder-icon {
+        font-size: 3rem;
+    }
+    
+    .placeholder-text {
+        font-size: 1rem;
+    }
+    
+    .article-cta {
+        padding: 2rem 1.5rem;
+    }
+    
+    .article-cta h3 {
+        font-size: 1.5rem;
+    }
+    
+    .article-cta p {
+        font-size: 1rem;
+    }
+    
+    .related-articles {
+        padding: 50px 0;
+    }
+    
+    .related-heading {
+        font-size: 1.75rem;
+    }
+    
+    .related-card-image {
+        height: 160px;
+    }
+    
+    .related-card-content {
+        padding: 1.25rem;
+    }
+    
+    .related-card-title {
+        font-size: 1.125rem;
+    }
+    
+    .related-card-description {
+        font-size: 0.875rem;
     }
 }
 
+/* Extra Small Devices */
+@media (max-width: 375px) {
+    .blog-hero-title {
+        font-size: 1.625rem;
+    }
+    
+    .section-heading {
+        font-size: 1.375rem;
+    }
+    
+    .article-title {
+        font-size: 1.5rem;
+    }
+    
+    .blog-card-image {
+        height: 180px;
+    }
+    
+    .filter-pill {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+    
+    .related-heading {
+        font-size: 1.5rem;
+    }
+}

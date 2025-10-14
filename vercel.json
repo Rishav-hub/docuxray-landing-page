@@ -1,0 +1,43 @@
+{
+  "version": 2,
+  "public": true,
+  "headers": [
+    {
+      "source": "/(.*).md",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/markdown; charset=UTF-8"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
+    },
+    {
+      "source": "/blogs/(.*).md",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/markdown; charset=UTF-8"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/blog-post",
+      "destination": "/blog-post.html"
+    },
+    {
+      "source": "/blog",
+      "destination": "/blog.html"
+    }
+  ]
+}
+

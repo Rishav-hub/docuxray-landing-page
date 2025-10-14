@@ -139,14 +139,42 @@ function generateGradient(index) {
 // Load markdown content
 async function loadMarkdownContent(postId) {
     try {
-        const response = await fetch(`blogs/${postId}.md`);
-        if (!response.ok) {
-            throw new Error('Blog post not found');
+        // Try different path variations for better deployment compatibility
+        const pathVariations = [
+            `./blogs/${postId}.md`,
+            `blogs/${postId}.md`,
+            `/blogs/${postId}.md`,
+            `${window.location.origin}/blogs/${postId}.md`
+        ];
+        
+        let markdown = null;
+        let lastError = null;
+        
+        for (const path of pathVariations) {
+            try {
+                console.log(`Attempting to fetch from: ${path}`);
+                const response = await fetch(path);
+                if (response.ok) {
+                    markdown = await response.text();
+                    console.log(`Successfully loaded from: ${path}`);
+                    break;
+                }
+            } catch (error) {
+                lastError = error;
+                console.warn(`Failed to load from ${path}:`, error);
+            }
         }
-        const markdown = await response.text();
+        
+        if (!markdown) {
+            throw new Error(`Blog post not found. Last error: ${lastError?.message}`);
+        }
+        
         return markdown;
     } catch (error) {
         console.error('Error loading blog post:', error);
+        console.error('Post ID:', postId);
+        console.error('Current URL:', window.location.href);
+        console.error('Origin:', window.location.origin);
         return null;
     }
 }
@@ -251,7 +279,23 @@ async function loadBlogPost() {
         const contentWithIds = generateTOC(htmlContent);
         document.getElementById('article-body').innerHTML = contentWithIds;
     } else {
-        document.getElementById('article-body').innerHTML = '<p>Error loading blog post content.</p>';
+        document.getElementById('article-body').innerHTML = `
+            <div style="padding: 2rem; text-align: center; background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px; margin: 2rem 0;">
+                <h3 style="color: #856404; margin-bottom: 1rem;">⚠️ Error Loading Blog Post</h3>
+                <p style="color: #856404; margin-bottom: 1rem;">We couldn't load the blog post content. This might be due to:</p>
+                <ul style="color: #856404; text-align: left; max-width: 500px; margin: 0 auto 1rem;">
+                    <li>The markdown file is not deployed to the server</li>
+                    <li>Server configuration preventing .md file access</li>
+                    <li>Path resolution issues in your deployment</li>
+                </ul>
+                <p style="color: #856404; margin-bottom: 1rem;">
+                    <strong>For developers:</strong> Check the browser console for detailed error messages.
+                </p>
+                <button onclick="window.location.href='blog.html'" style="padding: 0.75rem 1.5rem; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">
+                    ← Back to Blog List
+                </button>
+            </div>
+        `;
     }
     
     // Render related articles

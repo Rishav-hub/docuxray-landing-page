@@ -1,0 +1,29 @@
+# Netlify configuration
+[build]
+  publish = "."
+  command = "echo 'No build command needed for static site'"
+
+# Ensure markdown files are served with correct content type
+[[headers]]
+  for = "/*.md"
+  [headers.values]
+    Content-Type = "text/markdown; charset=UTF-8"
+    Access-Control-Allow-Origin = "*"
+
+[[headers]]
+  for = "/blogs/*.md"
+  [headers.values]
+    Content-Type = "text/markdown; charset=UTF-8"
+    Access-Control-Allow-Origin = "*"
+
+# Redirect rules (if needed)
+[[redirects]]
+  from = "/blog-post"
+  to = "/blog-post.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog"
+  to = "/blog.html"
+  status = 200
+
