@@ -236,6 +236,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize pricing toggle
     initPricingToggle();
+
+    // Initialize FAQ accordion
+    initFAQAccordion();
 });
 
 // Initialize Testimonial Carousel with Drag Scrolling
@@ -1723,4 +1726,70 @@ function initPricingToggle() {
     updatePricing(true);
 
     console.log('Pricing toggle initialized successfully');
+}
+
+// FAQ Accordion Toggle Functionality
+function toggleFAQ(index) {
+    const faqItems = document.querySelectorAll('.faq-item');
+    const clickedItem = faqItems[index];
+    
+    if (!clickedItem) return;
+    
+    // Toggle the clicked item
+    const isActive = clickedItem.classList.contains('active');
+    
+    // Optional: Close other FAQ items (uncomment if you want only one open at a time)
+    // faqItems.forEach(item => item.classList.remove('active'));
+    
+    // Toggle current item
+    if (isActive) {
+        clickedItem.classList.remove('active');
+    } else {
+        clickedItem.classList.add('active');
+    }
+}
+
+// Initialize FAQ Accordion
+function initFAQAccordion() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    if (!faqItems.length) {
+        console.log('FAQ items not found');
+        return;
+    }
+    
+    // Add keyboard accessibility
+    faqItems.forEach((item, index) => {
+        const question = item.querySelector('.faq-question');
+        
+        if (question) {
+            // Make it keyboard accessible
+            question.setAttribute('tabindex', '0');
+            question.setAttribute('role', 'button');
+            question.setAttribute('aria-expanded', 'false');
+            
+            // Add keyboard support (Enter and Space keys)
+            question.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    toggleFAQ(index);
+                    
+                    // Update aria-expanded attribute
+                    const isActive = item.classList.contains('active');
+                    question.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+                }
+            });
+            
+            // Update aria-expanded on click as well
+            question.addEventListener('click', () => {
+                // Small delay to let the class be added
+                setTimeout(() => {
+                    const isActive = item.classList.contains('active');
+                    question.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+                }, 50);
+            });
+        }
+    });
+    
+    console.log('FAQ accordion initialized successfully');
 }
