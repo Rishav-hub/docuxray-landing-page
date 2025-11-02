@@ -1,7 +1,7 @@
 # Netlify configuration
 [build]
-  publish = "."
-  command = "echo 'No build command needed for static site'"
+  publish = "dist"
+  command = "npm install && npm run build"
 
 # Ensure markdown files are served with correct content type
 [[headers]]
@@ -16,14 +16,9 @@
     Content-Type = "text/markdown; charset=UTF-8"
     Access-Control-Allow-Origin = "*"
 
-# Redirect rules (if needed)
+# Redirect rules for React Router SPA
 [[redirects]]
-  from = "/blog-post"
-  to = "/blog-post.html"
-  status = 200
-
-[[redirects]]
-  from = "/blog"
-  to = "/blog.html"
+  from = "/*"
+  to = "/index.html"
   status = 200
 

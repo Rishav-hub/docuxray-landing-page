@@ -1,6 +1,7 @@
 {
   "version": 2,
-  "public": true,
+  "buildCommand": "npm install && npm run build",
+  "outputDirectory": "dist",
   "headers": [
     {
       "source": "/(.*).md",
@@ -31,12 +32,8 @@
   ],
   "rewrites": [
     {
-      "source": "/blog-post",
-      "destination": "/blog-post.html"
-    },
-    {
-      "source": "/blog",
-      "destination": "/blog.html"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
