@@ -1,0 +1,156 @@
+.blogPostPage {
+  background: #fafafa;
+}
+
+.blogPostWrapper {
+  background: white;
+  min-height: 100vh;
+}
+
+.containerWide {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.loadingContainer,
+.errorContainer {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fafafa;
+}
+
+.loadingMessage,
+.errorMessage {
+  text-align: center;
+  padding: 2rem;
+}
+
+.errorMessage h3 {
+  font-size: 1.5rem;
+  color: #dc2626;
+  margin-bottom: 1rem;
+}
+
+.errorMessage p {
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.backButton {
+  padding: 0.75rem 1.5rem;
+  background: #059669;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.backButton:hover {
+  background: #047857;
+}
+
+/* Article Header */
+.articleHeader {
+  padding: 4rem 0 2rem;
+  margin-bottom: 2rem;
+}
+
+.articleTitle {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1a1a2e;
+  margin-bottom: 2rem;
+  letter-spacing: -0.02em;
+}
+
+.articleMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.authorInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.authorAvatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.authorDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.authorName {
+  font-weight: 600;
+  color: #1a1a2e;
+  font-size: 1rem;
+}
+
+.authorRole {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.articleDate {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+@media (max-width: 768px) {
+  .containerWide {
+    padding: 0 20px;
+  }
+
+  .articleHeader {
+    padding: 2rem 0 1.5rem;
+  }
+
+  .articleTitle {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .containerWide {
+    padding: 0 16px;
+  }
+
+  .articleHeader {
+    padding: 1.5rem 0 1rem;
+  }
+
+  .articleTitle {
+    font-size: 1.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .articleMeta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+

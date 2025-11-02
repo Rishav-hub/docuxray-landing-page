@@ -1,0 +1,152 @@
+.pricingHero {
+  background: #1f2937;
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+}
+
+.pricingHero::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: #f9fafb;
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.pricingHeroContent {
+  max-width: 900px;
+  margin: 0 auto 2rem auto;
+  position: relative;
+  z-index: 2;
+}
+
+.pricingHeroTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 600;
+  color: white;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.pricingHeroSubtitle {
+  font-size: 1.125rem;
+  color: #d1d5db;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.pricingLogoGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.pricingLogoItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+  min-height: 80px;
+}
+
+.pricingCompanyLogo {
+  max-width: 180px;
+  max-height: 80px;
+  object-fit: contain;
+  filter: brightness(0) invert(1) opacity(0.8);
+  transition: all 0.3s ease-in-out;
+}
+
+.pricingLogoItem:hover .pricingCompanyLogo {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+@media (max-width: 968px) {
+  .pricingLogoGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .pricingHero {
+    padding: 2rem 0;
+  }
+
+  .pricingHero::after {
+    height: 40px;
+  }
+
+  .pricingHeroContent {
+    margin-bottom: 2rem;
+  }
+
+  .pricingLogoGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .pricingLogoItem {
+    padding: 0.5rem;
+    min-height: 70px;
+  }
+
+  .pricingCompanyLogo {
+    max-width: 140px;
+    max-height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pricingHero {
+    padding: 32px 0 24px;
+  }
+
+  .pricingHeroTitle {
+    font-size: 2rem;
+    padding: 0 16px;
+  }
+
+  .pricingHeroSubtitle {
+    font-size: 1rem;
+    padding: 0 16px;
+  }
+
+  .pricingLogoGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .pricingLogoItem {
+    padding: 10px;
+    min-height: 65px;
+  }
+
+  .pricingCompanyLogo {
+    max-width: 130px;
+    max-height: 55px;
+  }
+}
+
+@media (max-width: 375px) {
+  .pricingHeroTitle {
+    font-size: 1.75rem;
+  }
+}
+

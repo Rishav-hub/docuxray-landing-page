@@ -1,0 +1,169 @@
+.blogPostContainer {
+  background: white;
+  min-height: 100vh;
+}
+
+.containerWide {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.blogPostLayout {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  gap: 3rem;
+  padding: 4rem 0;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Left Sidebar */
+.blogSidebarLeft {
+  position: relative;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: #888;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-bottom: 3rem;
+  transition: color 0.3s ease;
+  padding: 8px 0;
+}
+
+.backLink:hover {
+  color: #667eea;
+}
+
+.backArrow {
+  font-size: 1.2rem;
+}
+
+.tableOfContents {
+  position: sticky;
+  top: 100px;
+}
+
+.tocHeading {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #888;
+  margin-bottom: 1.5rem;
+}
+
+.tocNav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.tocLink {
+  text-decoration: none;
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  transition: color 0.3s ease, padding-left 0.3s ease;
+  padding-left: 0;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.tocLink:hover {
+  color: #667eea;
+  padding-left: 0.5rem;
+}
+
+.tocLink.active {
+  color: #667eea;
+  font-weight: 600;
+  padding-left: 0.5rem;
+}
+
+.tocEmpty {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+/* Main Content Area */
+.blogPostMain {
+  max-width: 800px;
+}
+
+.blogArticle {
+  background: white;
+}
+
+.articleBody {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+/* Right Sidebar */
+.blogSidebarRight {
+  /* Reserved for future use */
+}
+
+@media (max-width: 1200px) {
+  .blogPostLayout {
+    grid-template-columns: 250px 1fr;
+    gap: 2.5rem;
+  }
+
+  .blogSidebarRight {
+    display: none;
+  }
+
+  .containerWide {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .blogPostLayout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem 0;
+  }
+
+  .tableOfContents {
+    position: static;
+    margin-top: 2rem;
+  }
+
+  .backLink {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .containerWide {
+    padding: 0 16px;
+  }
+
+  .blogPostLayout {
+    padding: 1.5rem 0;
+  }
+
+  .tableOfContents {
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .tocHeading {
+    font-size: 0.8rem;
+  }
+
+  .tocLink {
+    font-size: 0.875rem;
+  }
+}
+

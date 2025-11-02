@@ -1,5 +1,4 @@
 import { useModal } from '@/contexts/ModalContext';
-import LiquidBackground from './LiquidBackground';
 import styles from './HeroSection.module.css';
 
 function HeroSection() {
@@ -7,7 +6,6 @@ function HeroSection() {
 
   return (
     <section className={styles.hero}>
-      <LiquidBackground />
       <div className={styles.container}>
         <div className={styles.heroGrid}>
           <div className={styles.heroLeft}>
