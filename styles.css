@@ -879,6 +879,256 @@ body {
     text-align: center;
 }
 
+/* Feature Showcase Section */
+.feature-showcase {
+    padding: 70px 0;
+    background: white;
+}
+
+.feature-showcase .container {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* Feature Block Layout */
+.feature-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 90px;
+}
+
+.feature-block:last-child {
+    margin-bottom: 0;
+}
+
+/* Block 1 & 3: Visual Left, Content Right */
+.feature-block-1,
+.feature-block-3 {
+    grid-template-columns: 45% 55%;
+}
+
+/* Block 2: Content Left, Visual Right (Reversed) */
+.feature-block-2 {
+    grid-template-columns: 55% 45%;
+}
+
+.feature-block-2 .feature-content {
+    order: 1;
+}
+
+.feature-block-2 .feature-visual {
+    order: 2;
+}
+
+/* Feature Visual Container */
+.feature-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature-visual-container {
+    width: 100%;
+    height: 450px;
+    border: 2px solid #D0D0D0;
+    border-radius: var(--radius-lg);
+    background: #FAFAFA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-normal);
+}
+
+.feature-block:hover .feature-visual-container {
+    border-color: var(--primary-green);
+    background: rgba(5, 150, 105, 0.02);
+}
+
+.feature-placeholder-text {
+    font-size: 1.5rem;
+    color: #9CA3AF;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+}
+
+/* Feature Content */
+.feature-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.feature-heading {
+    font-family: var(--font-heading);
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--dark-text);
+    line-height: 1.2;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+}
+
+.feature-description {
+    font-size: 17px;
+    color: var(--secondary-text);
+    line-height: 1.6;
+    margin-bottom: 28px;
+}
+
+.feature-cta {
+    align-self: flex-start;
+}
+
+/* Responsive Design for Feature Showcase */
+@media (max-width: 1200px) {
+    .feature-showcase {
+        padding: 60px 0;
+    }
+
+    .feature-block {
+        gap: 50px;
+        margin-bottom: 80px;
+    }
+
+    .feature-heading {
+        font-size: 38px;
+    }
+
+    .feature-visual-container {
+        height: 400px;
+    }
+}
+
+@media (max-width: 968px) {
+    .feature-showcase {
+        padding: 50px 0;
+    }
+
+    .feature-block {
+        gap: 40px;
+        margin-bottom: 70px;
+    }
+
+    .feature-block-1,
+    .feature-block-2,
+    .feature-block-3 {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .feature-heading {
+        font-size: 34px;
+        margin-bottom: 18px;
+    }
+
+    .feature-description {
+        font-size: 16px;
+        margin-bottom: 24px;
+    }
+
+    .feature-visual-container {
+        height: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .feature-showcase {
+        padding: 40px 0;
+    }
+
+    .feature-block {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-bottom: 60px;
+    }
+
+    /* Always show content first on mobile */
+    .feature-block-1 .feature-content,
+    .feature-block-2 .feature-content,
+    .feature-block-3 .feature-content {
+        order: 1;
+    }
+
+    .feature-block-1 .feature-visual,
+    .feature-block-2 .feature-visual,
+    .feature-block-3 .feature-visual {
+        order: 2;
+    }
+
+    .feature-heading {
+        font-size: 28px;
+        margin-bottom: 16px;
+        text-align: center;
+    }
+
+    .feature-description {
+        font-size: 15px;
+        margin-bottom: 24px;
+        text-align: center;
+    }
+
+    .feature-cta {
+        align-self: center;
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .feature-visual-container {
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .feature-showcase {
+        padding: 35px 0;
+    }
+
+    .feature-block {
+        gap: 24px;
+        margin-bottom: 50px;
+    }
+
+    .feature-heading {
+        font-size: 24px;
+        line-height: 1.25;
+        margin-bottom: 14px;
+    }
+
+    .feature-description {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .feature-visual-container {
+        height: 250px;
+    }
+
+    .feature-placeholder-text {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .feature-showcase {
+        padding: 30px 0;
+    }
+
+    .feature-block {
+        margin-bottom: 40px;
+    }
+
+    .feature-heading {
+        font-size: 22px;
+    }
+
+    .feature-visual-container {
+        height: 220px;
+    }
+}
+
 /* Responsive Design for Value Proposition */
 @media (max-width: 1200px) {
     .value-cards-grid {
@@ -1435,32 +1685,160 @@ body {
 
 /* Final CTA */
 .final-cta {
-    padding: var(--spacing-3xl) 0;
-    background: linear-gradient(135deg, var(--primary-green), var(--accent-green), var(--dark-green));
-    color: white;
-    text-align: center;
+    padding: 70px 0;
+    background: #E8E8E8;
 }
 
-.cta-content h2 {
-    font-family: var(--font-heading);
-    font-size: 2.5rem;
-    font-weight: 500;
-    margin-bottom: var(--spacing-lg);
+.final-cta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
 }
 
-.cta-content p {
-    font-size: 1.125rem;
-    margin-bottom: var(--spacing-2xl);
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.cta-actions {
+/* Left Column - Content */
+.final-cta-left {
     display: flex;
-    gap: var(--spacing-md);
+    flex-direction: column;
+    gap: 0;
+}
+
+.final-cta-heading {
+    font-family: var(--font-heading);
+    font-size: 48px;
+    font-weight: 700;
+    color: #000000;
+    line-height: 1.2;
+    margin-bottom: 28px;
+    letter-spacing: -0.02em;
+}
+
+.final-cta-description {
+    font-size: 19px;
+    color: #333333;
+    line-height: 1.6;
+    margin-bottom: 36px;
+}
+
+/* Features List with Check Icons */
+.final-cta-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 44px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.final-cta-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--dark-text);
+}
+
+.check-icon {
+    display: flex;
+    align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    background: #E5E7EB;
+    border-radius: 50%;
+    color: #059669;
+    font-weight: bold;
+    font-size: 14px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.final-cta-features strong {
+    font-weight: 600;
+    color: var(--dark-text);
+}
+
+/* CTA Button */
+.final-cta-button {
+    background: var(--primary-green);
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 18px 44px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    box-shadow: var(--shadow-sm);
+    align-self: flex-start;
+    margin-bottom: 48px;
+}
+
+.final-cta-button:hover {
+    background: var(--accent-green);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Statistics Section */
+.final-cta-stats {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 45px;
+    justify-content: start;
+}
+
+.final-cta-stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.final-cta-stat-number {
+    font-size: 38px;
+    font-weight: 700;
+    color: #000000;
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+
+.final-cta-stat-label {
+    font-size: 15px;
+    font-weight: 400;
+    color: #6B7280;
+    line-height: 1.3;
+}
+
+/* Right Column - Visual */
+.final-cta-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.final-cta-visual-container {
+    width: 100%;
+    background: white;
+    border: 1px solid #000000;
+    border-radius: 12px;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+}
+
+.final-cta-visual-text {
+    font-size: 22px;
+    color: #333333;
+    text-align: center;
+    line-height: 1.5;
+    max-width: 70%;
+    margin: 0;
 }
 
 /* Modals */
@@ -1687,6 +2065,32 @@ body {
     .btn-secondary {
         min-height: 44px;
         padding: 10px 24px;
+    }
+    
+    /* Final CTA - Tablet */
+    .final-cta {
+        padding: 60px 0;
+    }
+    
+    .final-cta-grid {
+        gap: 40px;
+    }
+    
+    .final-cta-heading {
+        font-size: 42px;
+    }
+    
+    .final-cta-description {
+        font-size: 18px;
+    }
+    
+    .final-cta-visual-container {
+        padding: 40px;
+        min-height: 350px;
+    }
+    
+    .final-cta-visual-text {
+        font-size: 20px;
     }
 }
 
@@ -1957,18 +2361,72 @@ body {
         padding: 0 12px;
     }
 
+    /* Final CTA - Mobile */
     .final-cta {
-        padding: 48px 0;
+        padding: 50px 0;
     }
     
-    .final-cta h2 {
-        font-size: 1.875rem;
-        padding: 0 16px;
+    .final-cta-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
     }
     
-    .final-cta p {
-        font-size: 1rem;
-        padding: 0 16px;
+    .final-cta-heading {
+        font-size: 32px;
+        margin-bottom: 24px;
+        text-align: center;
+    }
+    
+    .final-cta-description {
+        font-size: 17px;
+        margin-bottom: 32px;
+        text-align: center;
+    }
+    
+    .final-cta-features {
+        margin-bottom: 36px;
+    }
+    
+    .final-cta-features li {
+        font-size: 15px;
+    }
+    
+    .final-cta-button {
+        align-self: center;
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+        justify-content: center;
+        margin-bottom: 40px;
+    }
+    
+    .final-cta-stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .final-cta-stat-item {
+        align-items: center;
+    }
+    
+    .final-cta-stat-number {
+        font-size: 32px;
+    }
+    
+    .final-cta-stat-label {
+        font-size: 13px;
+    }
+    
+    .final-cta-visual-container {
+        padding: 40px 30px;
+        min-height: 300px;
+    }
+    
+    .final-cta-visual-text {
+        font-size: 18px;
+        max-width: 80%;
     }
 
     .modal-content {
@@ -2048,9 +2506,66 @@ body {
         line-height: 1.25;
     }
 
-    .final-cta h2 {
-        font-size: 1.625rem;
-        line-height: 1.3;
+    /* Final CTA - Small Mobile */
+    .final-cta {
+        padding: 40px 0;
+    }
+    
+    .final-cta-heading {
+        font-size: 26px;
+        line-height: 1.25;
+        margin-bottom: 20px;
+    }
+    
+    .final-cta-description {
+        font-size: 16px;
+        margin-bottom: 28px;
+    }
+    
+    .final-cta-features {
+        gap: 16px;
+        margin-bottom: 32px;
+    }
+    
+    .final-cta-features li {
+        font-size: 14px;
+        gap: 12px;
+    }
+    
+    .check-icon {
+        width: 20px;
+        height: 20px;
+        min-width: 20px;
+        font-size: 12px;
+    }
+    
+    .final-cta-button {
+        padding: 16px 32px;
+        font-size: 14px;
+        margin-bottom: 36px;
+    }
+    
+    .final-cta-stats {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .final-cta-stat-number {
+        font-size: 28px;
+    }
+    
+    .final-cta-stat-label {
+        font-size: 12px;
+    }
+    
+    .final-cta-visual-container {
+        padding: 30px 20px;
+        min-height: 250px;
+    }
+    
+    .final-cta-visual-text {
+        font-size: 16px;
+        max-width: 90%;
     }
 
     .feature-item,
