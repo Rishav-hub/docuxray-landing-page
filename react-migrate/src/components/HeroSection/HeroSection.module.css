@@ -1,0 +1,321 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+.hero {
+    padding: 40px 0 80px;
+    background: linear-gradient(135deg, var(--background-light) 0%, var(--background-subtle) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.heroGrid {
+    display: grid;
+    grid-template-columns: 6fr 6fr;
+    gap: 60px;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.heroLeft {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.heroRight {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heroHeading {
+    font-family: var(--font-heading);
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    color: var(--dark-text);
+    max-width: 100%;
+}
+
+.heroHeading .highlight {
+    color: var(--primary-green);
+}
+
+.heroSubheading {
+    font-size: 18px;
+    color: var(--secondary-text);
+    line-height: 1.6;
+    margin-bottom: 32px;
+    max-width: 90%;
+}
+
+.heroSubheading strong {
+    color: var(--dark-text);
+    font-weight: 600;
+}
+
+.heroActions {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 50px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: all var(--transition-normal);
+    min-height: 60px;
+    letter-spacing: 0.05em;
+}
+
+.btnPrimary {
+    background: var(--primary-green);
+    color: white;
+    box-shadow: var(--shadow-sm);
+    padding: 14px 30px;
+    min-height: 50px;
+}
+
+.btnPrimary:hover {
+    background: var(--accent-green);
+    transform: scale(1.02);
+    box-shadow: var(--shadow-md);
+}
+
+.btnSecondary {
+    background: transparent;
+    color: var(--dark-text);
+    border: 2px solid var(--dark-text);
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    min-height: auto;
+}
+
+.btnSecondary:hover {
+    background: var(--background-subtle);
+    border-color: var(--primary-green);
+    color: var(--primary-green);
+}
+
+.statisticsSection {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    max-width: 90%;
+    align-items: start;
+}
+
+.statItem {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.statNumber {
+    font-size: 34px;
+    font-weight: 600;
+    color: #000000;
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+
+.statLabel {
+    font-size: 14px;
+    font-weight: 400;
+    color: #4B5563;
+    line-height: 1.3;
+}
+
+.mediaContainer {
+    width: 100%;
+    max-width: 500px;
+    border: 3px solid var(--dark-text);
+    border-radius: 12px;
+    padding: 20px;
+    background: white;
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+}
+
+.dashboardImage {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    object-fit: cover;
+    max-height: 400px;
+}
+
+@media (max-width: 1200px) {
+    .heroGrid {
+        max-width: 1200px;
+        gap: 40px;
+    }
+    
+    .heroHeading {
+        font-size: clamp(30px, 4vw, 42px);
+    }
+    
+    .mediaContainer {
+        max-width: 450px;
+        padding: 50px 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .hero {
+        padding: 30px 0 50px;
+    }
+    
+    .heroGrid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        text-align: center;
+    }
+    
+    .heroLeft {
+        align-items: center;
+        text-align: center;
+    }
+    
+    .heroHeading {
+        font-size: clamp(28px, 6.5vw, 36px);
+        max-width: none;
+        margin-bottom: 20px;
+    }
+    
+    .heroSubheading {
+        max-width: none;
+        font-size: 16px;
+        margin-bottom: 28px;
+    }
+    
+    .mediaContainer {
+        max-width: 100%;
+        padding: 12px;
+        border-width: 2px;
+    }
+    
+    .dashboardImage {
+        max-height: 280px;
+    }
+    
+    .statisticsSection {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        max-width: 100%;
+    }
+    
+    .statNumber {
+        font-size: 26px;
+        font-weight: 600;
+    }
+    
+    .statLabel {
+        font-size: 12px;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 320px;
+        min-height: 52px;
+        font-size: 15px;
+    }
+    
+    .btnPrimary {
+        min-height: 52px;
+        padding: 16px 32px;
+    }
+
+    .heroActions {
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 24px 0 40px;
+    }
+    
+    .heroHeading {
+        font-size: clamp(24px, 7vw, 28px);
+        line-height: 1.15;
+    }
+    
+    .heroSubheading {
+        font-size: 15px;
+        margin-bottom: 24px;
+    }
+    
+    .heroActions {
+        gap: 12px;
+    }
+    
+    .statisticsSection {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        max-width: 100%;
+    }
+    
+    .statNumber {
+        font-size: 22px;
+        font-weight: 600;
+    }
+    
+    .statLabel {
+        font-size: 11px;
+    }
+
+    .mediaContainer {
+        padding: 10px;
+    }
+    
+    .dashboardImage {
+        max-height: 240px;
+    }
+}
+
+@media (max-width: 375px) {
+    .heroHeading {
+        font-size: 22px;
+    }
+    
+    .heroSubheading {
+        font-size: 14px;
+    }
+    
+    .btn {
+        font-size: 13px;
+        padding: 12px 24px;
+        min-height: 48px;
+    }
+}
+
