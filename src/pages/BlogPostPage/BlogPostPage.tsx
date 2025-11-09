@@ -3,8 +3,23 @@ import { useParams, useNavigate } from 'react-router-dom';
 import BlogPostLayout from '@/components/BlogPostLayout/BlogPostLayout';
 import RelatedArticles from '@/components/RelatedArticles/RelatedArticles';
 import { getBlogPostById, getInitials, formatDate } from '@/data/blogs';
-// Removed gray-matter import - using manual front matter parsing
 import styles from './BlogPostPage.module.css';
+
+const rawBlogModules = import.meta.glob('/src/blogs/*.md', {
+  as: 'raw',
+});
+
+const blogLoaders: Record<string, () => Promise<string>> = Object.entries(rawBlogModules).reduce(
+  (acc, [path, loader]) => {
+    const filename = path.split('/').pop();
+    if (filename) {
+      const slug = filename.replace(/\.md$/, '');
+      acc[slug] = loader as () => Promise<string>;
+    }
+    return acc;
+  },
+  {} as Record<string, () => Promise<string>>
+);
 
 // Simple front matter parser - extracts content after the --- delimiter
 function parseMarkdownContent(markdown: string): string {
@@ -57,18 +72,12 @@ function BlogPostPage() {
         setLoading(true);
         setError(null);
 
-        // For GitHub Pages deployment, use absolute path from deployment root
-        const markdownPath = `/docuxray-landing-page/blogs/${slug}.md`;
-
-        console.log(`Attempting to load blog post from: ${markdownPath}`);
-
-        const response = await fetch(markdownPath);
-        if (!response.ok) {
-          throw new Error(`Failed to load blog post: ${response.status} ${response.statusText}`);
+        const loader = blogLoaders[slug];
+        if (!loader) {
+          throw new Error(`Blog post not found: ${slug}`);
         }
 
-        const markdown = await response.text();
-        console.log(`Successfully loaded blog post from: ${markdownPath}`);
+        const markdown = await loader();
 
         // Parse front matter and remove it from content manually
         const content = parseMarkdownContent(markdown);

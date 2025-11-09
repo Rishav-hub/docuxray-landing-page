@@ -1,4 +1,5 @@
 import { useModal } from '@/contexts/ModalContext';
+import dashboardPreviewUrl from '@assets/dashboard-preview.png';
 import styles from './HeroSection.module.css';
 
 function HeroSection() {
@@ -41,7 +42,11 @@ function HeroSection() {
           </div>
           <div className={styles.heroRight}>
             <div className={styles.mediaContainer}>
-              <img src="/docuxray-landing-page/dashboard-preview.png" alt="Document Processing Dashboard" className={styles.dashboardImage} />
+            <img
+              src={dashboardPreviewUrl}
+              alt="Document Processing Dashboard"
+              className={styles.dashboardImage}
+            />
             </div>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import logoUrl from '@assets/docuxray-logo-v2.png';
 import styles from './Header.module.css';
 
 function Header() {
@@ -36,7 +37,7 @@ function Header() {
         <div className={styles.headerContent}>
           <div className={styles.logo}>
             <Link to="/">
-              <img src="/docuxray-landing-page/docuxray-logo-v2.png" alt="DocuXray" />
+              <img src={logoUrl} alt="DocuXray" />
             </Link>
           </div>
           <nav className={`${styles.navigation} ${isMobileMenuOpen ? styles.active : ''}`}>

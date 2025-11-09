@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import logoUrl from '@assets/docuxray-logo-v2.png';
 import styles from './Footer.module.css';
 
 function Footer() {
@@ -7,7 +8,7 @@ function Footer() {
       <div className={styles.container}>
         <div className={styles.footerContent}>
           <div className={styles.footerLogo}>
-            <img src="/docuxray-landing-page/docuxray-logo-v2.png" alt="DocuXray" />
+            <img src={logoUrl} alt="DocuXray" />
             <p>Enterprise Document AI Solutions</p>
           </div>
           <div className={styles.footerLinks}>
