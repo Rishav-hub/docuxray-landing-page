@@ -7,7 +7,7 @@ function Footer() {
       <div className={styles.container}>
         <div className={styles.footerContent}>
           <div className={styles.footerLogo}>
-            <img src="/docuxray-logo-v2.png" alt="DocuXray" />
+            <img src={`${import.meta.env.BASE_URL}docuxray-logo-v2.png`} alt="DocuXray" />
             <p>Enterprise Document AI Solutions</p>
           </div>
           <div className={styles.footerLinks}>

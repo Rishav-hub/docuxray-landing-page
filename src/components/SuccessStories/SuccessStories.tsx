@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState } from 'react';
 import styles from './SuccessStories.module.css';
 import { testimonials } from '@/data/testimonials';
 

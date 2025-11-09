@@ -53,7 +53,7 @@ function GradientMesh() {
     });
   }, []);
 
-  useFrame((state) => {
+  useFrame(() => {
     timeRef.current += 0.01;
     if (meshRef.current) {
       shaderMaterial.uniforms.uTime.value = timeRef.current;

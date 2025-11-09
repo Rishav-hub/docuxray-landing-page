@@ -3,8 +3,33 @@ import { useParams, useNavigate } from 'react-router-dom';
 import BlogPostLayout from '@/components/BlogPostLayout/BlogPostLayout';
 import RelatedArticles from '@/components/RelatedArticles/RelatedArticles';
 import { getBlogPostById, getInitials, formatDate } from '@/data/blogs';
-import matter from 'gray-matter';
+// Removed gray-matter import - using manual front matter parsing
 import styles from './BlogPostPage.module.css';
+
+// Simple front matter parser - extracts content after the --- delimiter
+function parseMarkdownContent(markdown: string): string {
+  const lines = markdown.split('\n');
+  let inFrontMatter = false;
+  let contentStartIndex = 0;
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim();
+
+    if (line === '---') {
+      if (!inFrontMatter) {
+        // Start of front matter
+        inFrontMatter = true;
+      } else {
+        // End of front matter
+        contentStartIndex = i + 1;
+        break;
+      }
+    }
+  }
+
+  // Return content starting from after the front matter
+  return lines.slice(contentStartIndex).join('\n');
+}
 
 function BlogPostPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -32,39 +57,25 @@ function BlogPostPage() {
         setLoading(true);
         setError(null);
 
-        // Try different path variations for better deployment compatibility
-        const pathVariations = [
-          `/blogs/${slug}.md`,
-          `./blogs/${slug}.md`,
-          `blogs/${slug}.md`,
-        ];
+        // Static assets from public folder are served relative to BASE_URL
+        const markdownPath = `${import.meta.env.BASE_URL}blogs/${slug}.md`;
 
-        let markdown: string | null = null;
-        let lastError: Error | null = null;
+        console.log(`Attempting to load blog post from: ${markdownPath}`);
 
-        for (const path of pathVariations) {
-          try {
-            const response = await fetch(path);
-            if (response.ok) {
-              markdown = await response.text();
-              break;
-            }
-          } catch (error) {
-            lastError = error as Error;
-          }
+        const response = await fetch(markdownPath);
+        if (!response.ok) {
+          throw new Error(`Failed to load blog post: ${response.status} ${response.statusText}`);
         }
 
-        if (!markdown) {
-          throw new Error(
-            `Blog post not found. ${lastError ? lastError.message : ''}`
-          );
-        }
+        const markdown = await response.text();
+        console.log(`Successfully loaded blog post from: ${markdownPath}`);
 
-        // Parse front matter and remove it from content
-        const { content } = matter(markdown);
+        // Parse front matter and remove it from content manually
+        const content = parseMarkdownContent(markdown);
         setMarkdownContent(content.trim());
       } catch (err) {
-        setError(err instanceof Error ? err.message : 'Failed to load blog post');
+        const errorMessage = err instanceof Error ? err.message : 'Failed to load blog post';
+        setError(`Error Loading Blog Post: ${errorMessage}`);
         console.error('Error loading blog post:', err);
       } finally {
         setLoading(false);

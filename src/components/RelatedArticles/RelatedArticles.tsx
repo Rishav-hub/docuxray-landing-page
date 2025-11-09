@@ -1,6 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import BlogCard from '@/components/BlogCard/BlogCard';
-import { getRelatedPosts, BlogPostMetadata, generateGradient } from '@/data/blogs';
+import { getRelatedPosts, generateGradient } from '@/data/blogs';
 import styles from './RelatedArticles.module.css';
 
 interface RelatedArticlesProps {

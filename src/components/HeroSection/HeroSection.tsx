@@ -41,7 +41,7 @@ function HeroSection() {
           </div>
           <div className={styles.heroRight}>
             <div className={styles.mediaContainer}>
-              <img src="/dashboard-preview.png" alt="Document Processing Dashboard" className={styles.dashboardImage} />
+              <img src={`${import.meta.env.BASE_URL}dashboard-preview.png`} alt="Document Processing Dashboard" className={styles.dashboardImage} />
             </div>
           </div>
         </div>

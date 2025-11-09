@@ -2,7 +2,7 @@ import { useState } from 'react';
 import BlogHero from '@/components/BlogHero/BlogHero';
 import BlogCard from '@/components/BlogCard/BlogCard';
 import BlogFilters from '@/components/BlogFilters/BlogFilters';
-import { blogPosts, getFeaturedPosts, getPostsByCategory, FilterType } from '@/data/blogs';
+import { getFeaturedPosts, getPostsByCategory, FilterType } from '@/data/blogs';
 import styles from './BlogPage.module.css';
 
 function BlogPage() {
