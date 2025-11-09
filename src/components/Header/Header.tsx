@@ -36,7 +36,7 @@ function Header() {
         <div className={styles.headerContent}>
           <div className={styles.logo}>
             <Link to="/">
-              <img src={`${import.meta.env.BASE_URL}docuxray-logo-v2.png`} alt="DocuXray" />
+              <img src="/docuxray-landing-page/docuxray-logo-v2.png" alt="DocuXray" />
             </Link>
           </div>
           <nav className={`${styles.navigation} ${isMobileMenuOpen ? styles.active : ''}`}>

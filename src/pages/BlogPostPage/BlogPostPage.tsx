@@ -57,8 +57,8 @@ function BlogPostPage() {
         setLoading(true);
         setError(null);
 
-        // Static assets from public folder are served relative to BASE_URL
-        const markdownPath = `${import.meta.env.BASE_URL}blogs/${slug}.md`;
+        // For GitHub Pages deployment, use absolute path from deployment root
+        const markdownPath = `/docuxray-landing-page/blogs/${slug}.md`;
 
         console.log(`Attempting to load blog post from: ${markdownPath}`);
 
