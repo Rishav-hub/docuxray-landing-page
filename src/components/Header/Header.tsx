@@ -1,11 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { useModal } from '@/contexts/ModalContext';
 import styles from './Header.module.css';
 
 function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { openModal } = useModal();
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -63,9 +61,12 @@ function Header() {
           <div className={styles.headerCta}>
             <button
               className={`${styles.btn} ${styles.btnSecondary}`}
-              onClick={() => openModal('contact')}
+              onClick={() => {
+                // Placeholder for login page - to be implemented
+                window.location.href = '#login';
+              }}
             >
-              Contact Sales
+              Login
             </button>
           </div>
           <div

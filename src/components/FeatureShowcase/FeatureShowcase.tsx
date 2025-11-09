@@ -17,10 +17,10 @@ function FeatureShowcase() {
           <div className={styles.featureContent}>
             <h2 className={styles.featureHeading}>Smarter AI That Checks Its Own Work</h2>
             <p className={styles.featureDescription}>
-              DocuXray doesn't just extract data — it double-checks every field before sending it to you. If it catches something that looks wrong or incomplete, it automatically corrects it. That means fewer errors, less time reviewing, and more confidence in your data.
+              DocuXray doesn't just extract data it double-checks every field before sending it to you. If it catches something that looks wrong or incomplete, it automatically corrects it. That means fewer errors, less time reviewing, and more confidence in your data.
             </p>
             <button className={`${styles.btn} ${styles.btnPrimary} ${styles.featureCta}`} onClick={() => openModal('demo')}>
-              START WITH 100 FREE PAGES
+              Start with 100 pages free
             </button>
           </div>
         </div>
@@ -30,10 +30,10 @@ function FeatureShowcase() {
           <div className={styles.featureContent}>
             <h2 className={styles.featureHeading}>Document AI That Just Works — No Templates, No Guesswork, No Stress</h2>
             <p className={styles.featureDescription}>
-              DocuXray adapts to your documents, not the other way around. Whether you're dealing with messy vendor invoices or handwritten receipts, you get consistent, reliable outputs that your systems — and your team — can trust.
+              DocuXray adapts to your documents, not the other way around. Whether you're dealing with messy vendor invoices or handwritten receipts, you get consistent, reliable outputs that your systems, and your team can trust.
             </p>
             <button className={`${styles.btn} ${styles.btnPrimary} ${styles.featureCta}`} onClick={() => openModal('demo')}>
-              START WITH 100 FREE PAGES
+              Start with 100 pages free
             </button>
           </div>
           <div className={styles.featureVisual}>
@@ -56,7 +56,7 @@ function FeatureShowcase() {
               Whether you're dealing with 50 or 50,000 docs a week, the system scales effortlessly.
             </p>
             <button className={`${styles.btn} ${styles.btnPrimary} ${styles.featureCta}`} onClick={() => openModal('demo')}>
-              START WITH 100 FREE PAGES
+              Start with 100 pages free
             </button>
           </div>
         </div>

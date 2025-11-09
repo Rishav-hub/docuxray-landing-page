@@ -10,21 +10,18 @@ function HeroSection() {
         <div className={styles.heroGrid}>
           <div className={styles.heroLeft}>
             <h2 className={styles.heroHeading}>
-              Stop Wasting Time on OCR That Doesn't Work Try Document AI
+              Stop Wasting Time on OCR That Doesn't Work Try Document AI{' '}
               <span className={styles.highlight}>
                 'Built for Accounting Teams with 99%+ Accuracy'
               </span>
             </h2>
             <p className={styles.heroSubheading}>
-              Fed up with OCR tools that can't handle real world documents? DocuXray read invoices, receipts, and statements in any format - 
-              <strong> even handwritten</strong> <strong>and delivers verified data in seconds</strong>.
+              Join teams replacing outdated OCR with AI that just works — 
+              <strong> no setup, no templates, no guesswork</strong> Upload your first documents and watch the magic happen..
             </p>
             <div className={styles.heroActions}>
               <button className={`${styles.btn} ${styles.btnPrimary}`} onClick={() => openModal('demo')}>
                 Start with 100 pages free
-              </button>
-              <button className={`${styles.btn} ${styles.btnSecondary}`} onClick={() => openModal('upload')}>
-                Upload Document
               </button>
             </div>
             <div className={styles.statisticsSection}>

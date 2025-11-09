@@ -31,7 +31,7 @@ function FinalCTA() {
             </ul>
             
             <button className={`${styles.btn} ${styles.finalCtaButton}`} onClick={() => openModal('demo')}>
-              START WITH 100 FREE PAGES
+              Start with 100 pages free
             </button>
             
             <div className={styles.finalCtaStats}>

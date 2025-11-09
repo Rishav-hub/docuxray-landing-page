@@ -32,16 +32,29 @@
     position: relative;
 }
 
+.logoMarqueeContainer.staticContainer {
+    overflow: visible;
+}
+
 .logoMarqueeTrack {
     display: flex;
     gap: 40px;
     align-items: center;
     width: max-content;
+}
+
+.logoMarqueeTrack.animated {
     animation: marquee-scroll 30s linear infinite;
     will-change: transform;
 }
 
-.logoMarqueeContainer:hover .logoMarqueeTrack {
+.logoMarqueeTrack.static {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.logoMarqueeContainer:hover .logoMarqueeTrack.animated {
     animation-play-state: paused;
 }
 

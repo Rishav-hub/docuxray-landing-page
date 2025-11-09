@@ -14,7 +14,7 @@ function ValueProposition() {
             <div className={styles.valueCardContent}>
               <h3 className={styles.valueCardTitle}>Catches Mistakes Before They Cost You Time</h3>
               <p className={styles.valueCardDescription}>
-                Unlike typical OCR tools that stop at the first draft, DocuXray double-checks its own work automatically. If something looks off, it corrects it — so your team spends less time reviewing, and more time doing.
+                Unlike typical OCR tools that stop at the first draft, DocuXray double-checks its own work automatically. If something looks off, it corrects it so your team spends less time reviewing, and more time doing.
               </p>
             </div>
             <div className={styles.valueCardImagePlaceholder}>
@@ -26,7 +26,7 @@ function ValueProposition() {
             <div className={styles.valueCardContent}>
               <h3 className={styles.valueCardTitle}>No Templates. No Setup. No Hassle.</h3>
               <p className={styles.valueCardDescription}>
-                DocuXray doesn't rely on rigid templates. Whether you're working with multiple vendors, inconsistent formats, or custom layouts, the system adapts — no rule-building or manual mapping required.
+                DocuXray doesn't rely on rigid templates. Whether you're working with multiple vendors, inconsistent formats, or custom layouts, the system adapts no rule-building or manual mapping required.
               </p>
             </div>
             <div className={styles.valueCardImagePlaceholder}>
@@ -49,7 +49,7 @@ function ValueProposition() {
 
         <div className={styles.valuePropCta}>
           <button className={`${styles.btn} ${styles.btnPrimary}`} onClick={() => openModal('demo')}>
-            START WITH 100 FREE PAGES
+            Start with 100 pages free
           </button>
         </div>
       </div>

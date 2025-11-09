@@ -13,7 +13,7 @@ function PainPointSection() {
           <div className={styles.comparisonSection}>
             <div className={styles.oldWay}>
               <div className={`${styles.wayBadge} ${styles.oldBadge}`}>The Old Way</div>
-              <h4>Manual document processing is eating your team's time — and patience.</h4>
+              <h4>Manual document processing is eating your team's time and patience.</h4>
               <p style={{ marginBottom: '1.5rem', color: '#6B7280', lineHeight: 1.7 }}>
                 You're stuck with outdated OCR tools that miss fields, choke on new templates, and need constant babysitting. Every hour spent fixing data is an hour lost to more strategic work.
               </p>
@@ -49,13 +49,13 @@ function PainPointSection() {
             </div>
 
             <div className={styles.newWay}>
-              <div className={`${styles.wayBadge} ${styles.newBadge}`}>The New Way</div>
+              <div className={`${styles.wayBadge} ${styles.newBadge}`}>The DocuXray Way</div>
               <h4>DocuXray replaces tedious OCR and manual entry with intelligent, automated precision.</h4>
               <p style={{ marginBottom: '1.5rem', color: '#6B7280', lineHeight: 1.7 }}>
-                Built for accounting workflows, it reads, verifies, and delivers clean data from any document — no templates, no setup, no surprises.
+                Built for accounting workflows, it reads, verifies, and delivers clean data from any document no templates, no setup, no surprises.
               </p>
               <h5 style={{ fontSize: '0.875rem', fontWeight: 700, color: '#1F2937', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                With the new way, you get:
+                With the DocuXray way, you get:
               </h5>
               <ul className={styles.wayList}>
                 <li>
@@ -72,7 +72,7 @@ function PainPointSection() {
                 </li>
                 <li>
                   <span className={styles.iconPositive}>✓</span>
-                  <span>Drag, drop, and extract — no template training or format tweaking needed</span>
+                  <span>Drag, drop, and extract no template training or format tweaking needed</span>
                 </li>
                 <li>
                   <span className={styles.iconPositive}>✓</span>
@@ -84,7 +84,7 @@ function PainPointSection() {
 
           <div className={styles.comparisonCta}>
             <button className={`${styles.btn} ${styles.btnPrimary}`} onClick={() => openModal('demo')}>
-              Start with 100 Pages Free
+              Start with 100 pages free
             </button>
             <p className={styles.ctaSubtext}>
               20,000+ Documents Processed Daily • 99%+ Accuracy • No credit card required
